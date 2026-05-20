@@ -1,0 +1,250 @@
+.topbar {
+  background: var(--blue-dark);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+  padding: 6px 0;
+  position: relative;
+  z-index: 100;
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topbar-link {
+  color: rgba(255,255,255,0.85);
+  transition: color var(--transition);
+}
+.topbar-link:hover {
+  color: var(--white);
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background: var(--blue);
+  transition: box-shadow var(--transition), background var(--transition);
+}
+
+.navbar--scrolled {
+  background: var(--blue-dark);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  gap: 24px;
+}
+
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.logo-mark {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.logo-hiper {
+  color: var(--white);
+}
+
+.logo-mat {
+  color: var(--red-light);
+}
+
+.logo-tagline {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar-link {
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  transition: color var(--transition), background var(--transition);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.navbar-link:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.12);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #25d366;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.navbar-whatsapp:hover {
+  background: #1db954;
+  transform: translateY(-1px);
+}
+
+.navbar-cart {
+  position: relative;
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background var(--transition);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-cart:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 0.3s ease;
+}
+
+.navbar-burger {
+  display: none;
+  color: var(--white);
+  background: rgba(255,255,255,0.12);
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  background: var(--blue-dark);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: fadeIn 0.2s ease;
+}
+
+.mobile-link {
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 12px;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition);
+}
+
+.mobile-link:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+}
+
+.mobile-whatsapp {
+  margin-top: 8px;
+  background: #25d366;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 12px;
+  border-radius: var(--radius);
+  transition: background var(--transition);
+}
+
+.mobile-whatsapp:hover {
+  background: #1db954;
+}
+
+@media (max-width: 768px) {
+  .topbar-inner {
+    gap: 12px;
+    font-size: 0.7rem;
+  }
+  .navbar-links {
+    display: none;
+  }
+  .navbar-whatsapp {
+    display: none;
+  }
+  .navbar-burger {
+    display: flex;
+  }
+}

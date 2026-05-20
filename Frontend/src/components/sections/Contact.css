@@ -1,0 +1,226 @@
+.contact {
+  padding: 96px 0 80px;
+  background: var(--white);
+  position: relative;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.contact-title {
+  color: var(--blue-dark);
+}
+
+.contact-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-top: 12px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-block {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-icon--blue { color: var(--blue); }
+.contact-icon--red { color: var(--red); }
+
+.contact-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
+  margin-bottom: 6px;
+}
+
+.contact-value {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.contact-closed {
+  color: var(--red);
+  font-weight: 500;
+}
+
+.contact-map-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--blue);
+  transition: color var(--transition);
+}
+
+.contact-map-link:hover {
+  color: var(--blue-dark);
+  text-decoration: underline;
+}
+
+.contact-ig {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #cc2366;
+  transition: opacity var(--transition);
+}
+
+.contact-ig:hover { opacity: 0.8; }
+
+/* CTA cards */
+.contact-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-cta-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.contact-cta-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow);
+}
+
+.contact-cta-card--wa {
+  background: #e8faf0;
+  border-color: rgba(37,211,102,0.3);
+}
+
+.contact-cta-card--wa:hover {
+  border-color: #25d366;
+}
+
+.contact-cta-card--wa .cta-card-icon {
+  color: #25d366;
+}
+
+.contact-cta-card--catalog {
+  background: #f0f5ff;
+  border-color: rgba(26,79,160,0.2);
+}
+
+.contact-cta-card--catalog:hover {
+  border-color: var(--blue);
+}
+
+.contact-cta-card--ig {
+  background: #fff0f7;
+  border-color: rgba(204,35,102,0.2);
+}
+
+.contact-cta-card--ig:hover {
+  border-color: #cc2366;
+}
+
+.contact-cta-card--ig .cta-card-icon {
+  color: #cc2366;
+}
+
+.cta-card-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-card-text {
+  flex: 1;
+}
+
+.cta-card-text h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--gray-800);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.cta-card-text p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.cta-card-arrow {
+  font-size: 1.3rem;
+  color: var(--gray-400);
+  transition: transform var(--transition), color var(--transition);
+}
+
+.contact-cta-card:hover .cta-card-arrow {
+  transform: translateX(4px);
+  color: var(--gray-800);
+}
+
+/* Floating WhatsApp button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 14px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.5);
+}
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 600px) {
+  .contact { padding: 64px 0; }
+  .whatsapp-float span { display: none; }
+  .whatsapp-float { padding: 16px; border-radius: 50%; }
+}
