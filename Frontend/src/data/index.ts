@@ -564,6 +564,7 @@ export const products: Product[] = [
   // ── GRIFERÍAS COCINA - PEIRANO ────────────────────────
   {
     id: 'peirano-toledo-monocomando',
+    image: productImages['peirano-toledo-monocomando'],
     name: 'Peirano Toledo Monocomando',
     description: 'Grifería de cocina Peirano Toledo monocomando. Diseño clásico y resistente.',
     category: 'griferias-cocina',
@@ -573,6 +574,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-santander-monocomando',
+    image: productImages['peirano-santander-monocomando'],
     name: 'Peirano Santander Monocomando',
     description: 'Grifería de cocina Peirano Santander monocomando. Estilo moderno y funcional.',
     category: 'griferias-cocina',
@@ -582,6 +584,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-renacer-monocomando',
+    image: productImages['peirano-renacer-monocomando'],
     name: 'Peirano Renacer Monocomando',
     description: 'Grifería de cocina Peirano Renacer monocomando. Diseño renovado para cocinas modernas.',
     category: 'griferias-cocina',
@@ -591,6 +594,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-marbella-monocomando',
+    image: productImages['peirano-marbella-monocomando'],
     name: 'Peirano Marbella Monocomando',
     description: 'Grifería de cocina Peirano Marbella monocomando. Estilo elegante y acabado cromado.',
     category: 'griferias-cocina',
@@ -610,6 +614,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-colors-flex',
+    image: productImages['peirano-colors-flex'],
     name: 'Peirano Colors Monocomando Flex',
     description: 'Grifería de cocina Peirano Colors con flexo. Disponible en múltiples colores.',
     category: 'griferias-cocina',
@@ -619,6 +624,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-black-velvet',
+    image: productImages['peirano-black-velvet'],
     name: 'Peirano Black Velvet Monocomando',
     description: 'Grifería de cocina Peirano Black Velvet. Terminación negra mate de alto diseño.',
     category: 'griferias-cocina',
@@ -629,6 +635,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-betis-monocomando',
+    image: productImages['peirano-betis-monocomando'],
     name: 'Peirano Betis Monocomando',
     description: 'Grifería de cocina Peirano Betis monocomando. Diseño compacto y práctico.',
     category: 'griferias-cocina',
@@ -638,6 +645,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-marbella-llenado',
+    image: productImages['peirano-marbella-llenado'],
     name: 'Peirano Marbella Llenado de Ollas',
     description: 'Grifería de cocina Peirano Marbella con función llenado de ollas. Cuello extralargo extraíble.',
     category: 'griferias-cocina',
@@ -647,6 +655,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-valencia',
+    image: productImages['peirano-valencia'],
     name: 'Peirano Valencia',
     description: 'Grifería de cocina Peirano Valencia. Diseño europeo clásico.',
     category: 'griferias-cocina',
@@ -656,6 +665,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-malba',
+    image: productImages['peirano-malba'],
     name: 'Peirano Malba',
     description: 'Grifería de cocina Peirano Malba. Línea premium con acabado de lujo.',
     category: 'griferias-cocina',
@@ -665,6 +675,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-dique-bimando',
+    image: productImages['peirano-dique-bimando'],
     name: 'Peirano Dique Bimando',
     description: 'Grifería de cocina Peirano Dique bimando. Control independiente de agua fría y caliente.',
     category: 'griferias-cocina',
@@ -674,6 +685,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-cuina-monocomando',
+    image: productImages['peirano-cuina-monocomando'],
     name: 'Peirano Cuina Monocomando',
     description: 'Grifería de cocina Peirano Cuina monocomando. Línea moderna y funcional.',
     category: 'griferias-cocina',
@@ -750,6 +762,7 @@ export const products: Product[] = [
   // ── GRIFERÍAS BAÑO ────────────────────────────────────
   {
     id: 'peirano-lugo-bano',
+    image: productImages['peirano-lugo-bano'],
     name: 'Peirano Lugo Baño',
     description: 'Grifería de baño Peirano Lugo. Diseño clásico para lavatorios y bidés.',
     category: 'griferias-bano',
@@ -760,6 +773,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-mora-bano',
+    image: productImages['peirano-mora-bano'],
     name: 'Peirano Mora Baño',
     description: 'Grifería de baño Peirano Mora. Estilo moderno y minimalista para baños contemporáneos.',
     category: 'griferias-bano',
@@ -769,6 +783,7 @@ export const products: Product[] = [
   },
   {
     id: 'peirano-vera-bano',
+    image: productImages['peirano-vera-bano'],
     name: 'Peirano Vera Baño',
     description: 'Grifería de baño Peirano Vera. Línea premium con acabado de alta durabilidad.',
     category: 'griferias-bano',
@@ -779,3 +794,4 @@ export const products: Product[] = [
 ];
 
 export const featuredProducts = products.filter(p => p.featured);
+export { productImages } from './images';

@@ -6,7 +6,7 @@ export default function Contact() {
   const waMessage = encodeURIComponent('Hola Hipermat! Quiero hacer una consulta sobre materiales.');
 
   return (
-    <section id="contacto" className="contact">
+    <section className="contact">
       <div className="container">
         <div className="contact-header">
           <span className="section-eyebrow">Estamos para ayudarte</span>

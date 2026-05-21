@@ -1,8 +1,10 @@
 import { Instagram, MapPin, Clock, Phone } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { contactInfo, categories } from '../../data';
 import './Footer.css';
 
 export default function Footer() {
+  const navigate = useNavigate();
   const year = new Date().getFullYear();
 
   return (
@@ -41,7 +43,7 @@ export default function Footer() {
                   <button
                     className="footer-link"
                     onClick={() => {
-                      document.getElementById('catalogo')?.scrollIntoView({ behavior: 'smooth' });
+                      navigate('/catalogo');
                     }}
                   >
                     {cat.icon} {cat.name}

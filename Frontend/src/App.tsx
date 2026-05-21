@@ -1,35 +1,39 @@
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useCart } from './hooks/useCart';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import Hero from './components/sections/Hero';
-import Catalog from './components/sections/Catalog';
-import Services from './components/sections/Services';
-import About from './components/sections/About';
-import Contact from './components/sections/Contact';
 import Cart from './components/ui/Cart';
+import HomePage from './pages/HomePage';
+import CatalogPage from './pages/CatalogPage';
+import ServicesPage from './pages/ServicesPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 import './index.css';
 
-export default function App() {
-  const cart = useCart();
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
-  const scrollToCatalog = () => {
-    document.getElementById('catalogo')?.scrollIntoView({ behavior: 'smooth' });
-  };
+function AppContent() {
+  const cart = useCart();
 
   return (
     <>
+      <ScrollToTop />
       <Navbar cartCount={cart.totalItems} onCartOpen={() => cart.setIsOpen(true)} />
-
       <main>
-        <Hero onCatalogClick={scrollToCatalog} />
-        <Catalog onAddToCart={cart.addItem} />
-        <Services />
-        <About />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalogo" element={<CatalogPage onAddToCart={cart.addItem} />} />
+          <Route path="/servicios" element={<ServicesPage />} />
+          <Route path="/nosotros" element={<AboutPage />} />
+          <Route path="/contacto" element={<ContactPage />} />
+        </Routes>
       </main>
-
       <Footer />
-
       <Cart
         isOpen={cart.isOpen}
         items={cart.items}
@@ -42,5 +46,13 @@ export default function App() {
         totalItems={cart.totalItems}
       />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }

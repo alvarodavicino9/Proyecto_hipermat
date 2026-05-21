@@ -248,3 +248,12 @@
     display: flex;
   }
 }
+
+.navbar-link--active {
+  color: var(--white) !important;
+  background: rgba(255,255,255,0.18) !important;
+}
+.mobile-link--active {
+  background: rgba(255,255,255,0.12) !important;
+  color: var(--white) !important;
+}
