@@ -4,6 +4,7 @@ import { useCart } from './hooks/useCart';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Cart from './components/ui/Cart';
+import WhatsAppFloat from './components/ui/WhatsAppFloat';
 import HomePage from './pages/HomePage';
 import CatalogPage from './pages/CatalogPage';
 import ServicesPage from './pages/ServicesPage';
@@ -13,24 +14,23 @@ import './index.css';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior }); }, [pathname]);
   return null;
 }
 
 function AppContent() {
   const cart = useCart();
-
   return (
     <>
       <ScrollToTop />
       <Navbar cartCount={cart.totalItems} onCartOpen={() => cart.setIsOpen(true)} />
       <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/catalogo" element={<CatalogPage onAddToCart={cart.addItem} />} />
+          <Route path="/"          element={<HomePage />} />
+          <Route path="/catalogo"  element={<CatalogPage onAddToCart={cart.addItem} />} />
           <Route path="/servicios" element={<ServicesPage />} />
-          <Route path="/nosotros" element={<AboutPage />} />
-          <Route path="/contacto" element={<ContactPage />} />
+          <Route path="/nosotros"  element={<AboutPage />} />
+          <Route path="/contacto"  element={<ContactPage />} />
         </Routes>
       </main>
       <Footer />
@@ -45,6 +45,7 @@ function AppContent() {
         onSend={cart.sendToWhatsApp}
         totalItems={cart.totalItems}
       />
+      <WhatsAppFloat />
     </>
   );
 }

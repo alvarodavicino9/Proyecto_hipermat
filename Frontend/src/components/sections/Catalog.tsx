@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
-import { Plus, Search, ChevronRight, X } from 'lucide-react';
+import { Plus, Search, ChevronRight, X, Eye } from 'lucide-react';
 import { categories, products } from '../../data';
 import { Product } from '../../types';
+import ProductModal from '../ui/ProductModal';
 import './Catalog.css';
 
 interface CatalogProps {
@@ -13,6 +14,7 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
   const [activeSub, setActiveSub] = useState<string | null>(null);
   const [search, setSearch] = useState('');
   const [addedId, setAddedId] = useState<string | null>(null);
+  const [modalProduct, setModalProduct] = useState<Product | null>(null);
 
   const handleAdd = (product: Product) => {
     onAddToCart(product, 1);
@@ -63,7 +65,7 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
     <section id="catalogo" className="catalog">
       <div className="container">
 
-        {/* ── Header ── */}
+        {/* Header */}
         <div className="catalog-header">
           <div>
             <span className="section-eyebrow">Nuestros productos</span>
@@ -81,14 +83,12 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
               onChange={e => { setSearch(e.target.value); setActiveCat(null); setActiveSub(null); }}
             />
             {search && (
-              <button className="search-clear" onClick={() => setSearch('')}>
-                <X size={14} />
-              </button>
+              <button className="search-clear" onClick={() => setSearch('')}><X size={14} /></button>
             )}
           </div>
         </div>
 
-        {/* ── Breadcrumb ── */}
+        {/* Breadcrumb */}
         {isFiltering && (
           <div className="catalog-breadcrumb">
             <button className="breadcrumb-item breadcrumb-home" onClick={clearFilters}>
@@ -97,10 +97,7 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
             {currentCategory && (
               <>
                 <ChevronRight size={14} className="breadcrumb-sep" />
-                <button
-                  className="breadcrumb-item"
-                  onClick={() => { setActiveSub(null); }}
-                >
+                <button className="breadcrumb-item" onClick={() => setActiveSub(null)}>
                   {currentCategory.icon} {currentCategory.name}
                 </button>
               </>
@@ -120,11 +117,13 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
           </div>
         )}
 
-        {/* ── Categories grid (home view) ── */}
+        {/* Categories grid — home view */}
         {!isFiltering && (
           <div className="categories-grid">
             {categories.map((cat, i) => {
               const count = products.filter(p => p.category === cat.id).length;
+              // Pick first product with image for the category preview
+              const previewProduct = products.find(p => p.category === cat.id && p.image);
               return (
                 <button
                   key={cat.id}
@@ -132,12 +131,16 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
                   style={{ '--cat-delay': `${i * 40}ms` } as React.CSSProperties}
                   onClick={() => selectCategory(cat.id)}
                 >
-                  <div className={`cat-card-top cat-card-top--${i % 2 === 0 ? 'blue' : 'red'}`}>
-                    <span className="cat-card-icon">{cat.icon}</span>
+                  <div className="cat-card-top">
+                    {previewProduct?.image ? (
+                      <img src={previewProduct.image} alt={cat.name} className="cat-card-preview-img" />
+                    ) : (
+                      <span className="cat-card-icon">{cat.icon}</span>
+                    )}
                     <span className="cat-card-count">{count} productos</span>
                   </div>
                   <div className="cat-card-body">
-                    <h3 className="cat-card-name">{cat.name}</h3>
+                    <h3 className="cat-card-name">{cat.icon} {cat.name}</h3>
                     <p className="cat-card-desc">{cat.description}</p>
                     <div className="cat-card-footer">
                       {cat.subcategories?.slice(0, 2).map(s => (
@@ -157,7 +160,7 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
           </div>
         )}
 
-        {/* ── Subcategory tabs (when category selected) ── */}
+        {/* Subcategory tabs */}
         {activeCat && subcategories.length > 1 && (
           <div className="subcategory-tabs">
             <button
@@ -178,13 +181,13 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
           </div>
         )}
 
-        {/* ── Products grid ── */}
+        {/* Products grid */}
         {isFiltering && (
           <>
             {filtered.length === 0 ? (
               <div className="catalog-empty">
                 <span className="empty-icon">🔍</span>
-                <p>No encontramos resultados para tu búsqueda.</p>
+                <p>No encontramos resultados.</p>
                 <button className="btn-secondary" onClick={clearFilters}>Ver todo el catálogo</button>
               </div>
             ) : (
@@ -199,6 +202,7 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
                       product={product}
                       added={addedId === product.id}
                       onAdd={handleAdd}
+                      onView={() => setModalProduct(product)}
                     />
                   ))}
                 </div>
@@ -207,7 +211,7 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
           </>
         )}
 
-        {/* ── WhatsApp CTA ── */}
+        {/* WhatsApp CTA */}
         <div className="catalog-cta-banner">
           <div className="catalog-cta-text">
             <strong>¿No encontrás lo que buscás?</strong>
@@ -225,26 +229,32 @@ export default function Catalog({ onAddToCart }: CatalogProps) {
             Ver catálogo completo en WhatsApp
           </a>
         </div>
-
       </div>
+
+      {/* Product Modal */}
+      <ProductModal
+        product={modalProduct}
+        onClose={() => setModalProduct(null)}
+        onAddToCart={onAddToCart}
+      />
     </section>
   );
 }
 
-// ── ProductCard component ──────────────────────────────────
+/* ── ProductCard ─────────────────────────────────────── */
 interface ProductCardProps {
   product: Product;
   added: boolean;
   onAdd: (p: Product) => void;
+  onView: () => void;
 }
 
-function ProductCard({ product, added, onAdd }: ProductCardProps) {
+function ProductCard({ product, added, onAdd, onView }: ProductCardProps) {
   const cat = categories.find(c => c.id === product.category);
 
   return (
     <div className="product-card">
-      {/* Image area */}
-      <div className="product-img-wrap">
+      <div className="product-img-wrap" onClick={onView} role="button" tabIndex={0} onKeyDown={e => e.key === 'Enter' && onView()}>
         {product.image ? (
           <img src={product.image} alt={product.name} className="product-img" />
         ) : (
@@ -254,9 +264,12 @@ function ProductCard({ product, added, onAdd }: ProductCardProps) {
           </div>
         )}
         {product.featured && <span className="product-badge">Destacado</span>}
+        <div className="product-img-hover">
+          <Eye size={20} />
+          <span>Ver detalle</span>
+        </div>
       </div>
 
-      {/* Info */}
       <div className="product-info">
         <div className="product-meta">
           <span className="product-category-tag">{cat?.name}</span>
@@ -269,17 +282,17 @@ function ProductCard({ product, added, onAdd }: ProductCardProps) {
         <span className="product-unit">Unidad: {product.unit}</span>
       </div>
 
-      {/* Action */}
-      <button
-        className={`product-add-btn ${added ? 'product-add-btn--added' : ''}`}
-        onClick={() => onAdd(product)}
-      >
-        {added ? (
-          <>✓ Agregado al pedido</>
-        ) : (
-          <><Plus size={16} /> Agregar al pedido</>
-        )}
-      </button>
+      <div className="product-card-actions">
+        <button className="product-view-btn" onClick={onView}>
+          <Eye size={15} /> Ver detalle
+        </button>
+        <button
+          className={`product-add-btn ${added ? 'product-add-btn--added' : ''}`}
+          onClick={() => onAdd(product)}
+        >
+          {added ? <>✓ Agregado</> : <><Plus size={15} /> Agregar</>}
+        </button>
+      </div>
     </div>
   );
 }

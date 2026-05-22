@@ -1,5 +1,6 @@
 import { CheckCircle, Instagram } from 'lucide-react';
 import { contactInfo } from '../../data';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import './About.css';
 
 const values = [
@@ -12,11 +13,18 @@ const values = [
 ];
 
 export default function About() {
+  const left  = useScrollAnimation();
+  const right = useScrollAnimation();
+  const stats = useScrollAnimation();
+
   return (
     <section id="nosotros" className="about">
       <div className="container about-grid">
-        {/* Left: text */}
-        <div className="about-text">
+        {/* Left */}
+        <div
+          ref={left.ref}
+          className={`about-text anim-fade-left ${left.visible ? 'anim-visible' : ''}`}
+        >
           <span className="section-eyebrow">Quiénes somos</span>
           <h2 className="section-title about-title">
             HIPERMAT<br />
@@ -24,24 +32,22 @@ export default function About() {
           </h2>
           <p className="about-desc">
             Somos un corralón y ferretería de materiales de construcción ubicado en Rosario,
-            Santa Fe. Nos especializamos en la venta de materiales por mayor y menor,
-            atendiendo tanto a clientes particulares como a empresas constructoras.
+            Santa Fe. Nos especializamos en la venta por mayor y menor, atendiendo tanto a
+            particulares como a empresas constructoras.
           </p>
           <p className="about-desc">
             Nuestro diferencial es el trato: cada cliente es atendido de forma personalizada
-            por empleados con años de experiencia en el rubro, capacitados para asesorarte
-            en la elección correcta de materiales para tu proyecto.
+            por empleados con años de experiencia, capacitados para asesorarte en la elección
+            correcta de materiales para tu proyecto.
           </p>
-
           <ul className="about-values">
             {values.map((v, i) => (
               <li key={i} className="about-value">
-                <CheckCircle size={18} className="value-check" />
+                <CheckCircle size={17} className="value-check" />
                 <span>{v}</span>
               </li>
             ))}
           </ul>
-
           <a
             href={contactInfo.instagram}
             target="_blank"
@@ -54,8 +60,11 @@ export default function About() {
           </a>
         </div>
 
-        {/* Right: info cards */}
-        <div className="about-cards">
+        {/* Right */}
+        <div
+          ref={right.ref}
+          className={`about-cards anim-fade-right ${right.visible ? 'anim-visible' : ''}`}
+        >
           <div className="about-card about-card--blue">
             <div className="about-card-icon">📍</div>
             <div>
@@ -100,7 +109,10 @@ export default function About() {
           </div>
 
           {/* Stats */}
-          <div className="about-stats">
+          <div
+            ref={stats.ref}
+            className={`about-stats anim-scale ${stats.visible ? 'anim-visible' : ''}`}
+          >
             <div className="about-stat">
               <span className="about-stat-num">+500</span>
               <span className="about-stat-label">Productos</span>
