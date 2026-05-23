@@ -59,7 +59,7 @@ export default function Footer() {
             <p className="footer-tagline">Otro trato.</p>
             <p className="footer-desc">
               Corralón de materiales de construcción en Rosario. Venta por mayor y menor.
-              Más de 30 años en el rubro.
+              Más de 20 años en el rubro.
             </p>
             <div className="footer-socials">
               <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" className="footer-social footer-social--ig" aria-label="Instagram">

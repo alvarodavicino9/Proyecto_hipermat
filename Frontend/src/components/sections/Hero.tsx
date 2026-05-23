@@ -58,7 +58,7 @@ export default function Hero() {
                 className="hero-main-photo"
               />
               <div className="hero-photo-badge">
-                <span>+30 años en el rubro</span>
+                <span>+20 años en el rubro</span>
               </div>
             </div>
 
@@ -93,7 +93,7 @@ export default function Hero() {
               TU CORRALÓN DE <span style={{color:'var(--red)'}}>CONFIANZA</span>
             </h2>
             <p className="empresa-subtitle">
-              Más de 30 años abasteciendo obras en Rosario y zona.
+              Más de 20 años abasteciendo obras en Rosario y zona.
               Flota propia de camiones con hidrogrúa para entrega y descarga.
             </p>
           </div>

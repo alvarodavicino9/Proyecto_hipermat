@@ -212,3 +212,10 @@
   .footer-cta-btn { justify-content: center; }
   .footer-desc { max-width: 100%; }
 }
+
+/* ── MOBILE EXTRA ───────────────────────────────── */
+@media (max-width: 400px) {
+  .footer-logo-hiper, .footer-logo-mat { font-size: 1.6rem; }
+  .footer-cta-title { font-size: 1.1rem; }
+  .footer-bottom-inner { flex-direction: column; text-align: center; }
+}

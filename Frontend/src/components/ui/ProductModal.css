@@ -213,3 +213,11 @@
   .modal-info { padding: 20px 18px; }
   .modal-title { font-size: 1.2rem; }
 }
+
+/* ── MOBILE EXTRA ───────────────────────────────── */
+@media (max-width: 400px) {
+  .modal-box { margin: 0; border-radius: 0; max-height: 100vh; }
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal-info { padding: 16px 14px; }
+  .modal-actions { flex-direction: column; }
+}

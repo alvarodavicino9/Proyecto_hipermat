@@ -153,7 +153,7 @@ export default function Services() {
               <div className="mapa-wrap">
                 <iframe
                   title="Hipermat Rosario"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.5!2d-60.72!3d-32.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab1234567890%3A0x0!2sJuan+Jos%C3%A9+Paso+6082%2C+Rosario%2C+Santa+Fe!5e0!3m2!1ses!2sar!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.122876699495!2d-60.72387492394648!3d-32.994752873571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7aba414935555%3A0x4b5c6d7e8f9a0b1c!2sJuan%20Jos%C3%A9%20Paso%206082%2C%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1716000000000!5m2!1ses!2sar"
                   width="100%"
                   height="280"
                   style={{ border: 0, borderRadius: '8px 8px 0 0' }}
@@ -184,7 +184,7 @@ export default function Services() {
                     </div>
                   </div>
                   <a
-                    href="https://maps.google.com/?q=Juan+José+Paso+6082+Rosario+Santa+Fe"
+                    href="https://www.google.com/maps/search/?api=1&query=Juan+José+Paso+6082+Rosario+Santa+Fe+Argentina"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mapa-link"

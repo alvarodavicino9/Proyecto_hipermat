@@ -378,3 +378,14 @@
   .proceso-steps { grid-template-columns: 1fr; }
   .envios-section { padding: 64px 0; }
 }
+
+/* ── MOBILE EXTRA ───────────────────────────────── */
+@media (max-width: 480px) {
+  .proceso-steps { grid-template-columns: 1fr; }
+  .paso-num { width: 56px; height: 56px; font-size: 1.3rem; }
+  .envios-destacado { flex-direction: column; gap: 10px; }
+  .zonas-list { font-size: 0.85rem; }
+  .presupuesto-banner { padding: 36px 0; }
+  .presupuesto-inner { flex-direction: column; gap: 20px; }
+  .presupuesto-btn { width: 100%; justify-content: center; }
+}

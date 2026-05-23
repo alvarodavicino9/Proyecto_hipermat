@@ -10,6 +10,7 @@ import CatalogPage from './pages/CatalogPage';
 import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
 import './index.css';
 
 function ScrollToTop() {
@@ -31,6 +32,7 @@ function AppContent() {
           <Route path="/servicios" element={<ServicesPage />} />
           <Route path="/nosotros"  element={<AboutPage />} />
           <Route path="/contacto"  element={<ContactPage />} />
+          <Route path="*"          element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />

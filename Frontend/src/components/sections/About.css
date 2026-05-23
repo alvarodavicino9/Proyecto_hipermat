@@ -208,3 +208,16 @@
 @media (max-width: 600px) {
   .about { padding: 64px 0; }
 }
+
+/* ── MOBILE ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about { padding: 64px 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .about { padding: 52px 0; }
+  .about-title { font-size: 2.2rem; }
+  .about-stats { padding: 16px; }
+  .about-stat-num { font-size: 1.4rem; }
+  .about-instagram { width: 100%; justify-content: center; }
+}

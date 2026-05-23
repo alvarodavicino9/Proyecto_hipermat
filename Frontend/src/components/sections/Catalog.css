@@ -316,3 +316,11 @@
   .categories-grid { grid-template-columns: 1fr; }
   .products-grid { grid-template-columns: 1fr; }
 }
+
+/* ── MOBILE EXTRA ───────────────────────────────── */
+@media (max-width: 400px) {
+  .products-grid { grid-template-columns: 1fr; }
+  .categories-grid { grid-template-columns: 1fr; }
+  .cat-card-top { height: 110px; }
+  .catalog-cta-banner { padding: 20px; }
+}

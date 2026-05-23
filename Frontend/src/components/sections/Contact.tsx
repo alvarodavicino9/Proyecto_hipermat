@@ -1,4 +1,4 @@
-import { MapPin, Clock, Phone, Instagram } from 'lucide-react';
+import { MapPin, Clock, Phone, Instagram, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { contactInfo } from '../../data';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
@@ -129,7 +129,7 @@ export default function Contact() {
                   <h4 className="contact-block-title">Dirección</h4>
                   <p>Juan José Paso 6082, Rosario, Santa Fe</p>
                   <a
-                    href="https://maps.google.com/?q=Juan+José+Paso+6082+Rosario"
+                    href="https://www.google.com/maps/search/?api=1&query=Juan+José+Paso+6082+Rosario+Santa+Fe+Argentina"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact-block-link"
@@ -148,6 +148,15 @@ export default function Contact() {
                 </div>
               </div>
               <div className="contact-block">
+                <div className="contact-block-icon"><Mail size={20} /></div>
+                <div>
+                  <h4 className="contact-block-title">Email</h4>
+                  <a href="mailto:hipermatrosario@gmail.com" className="contact-block-link-plain">
+                    hipermatrosario@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="contact-block">
                 <div className="contact-block-icon"><Phone size={20} /></div>
                 <div>
                   <h4 className="contact-block-title">Teléfono</h4>
@@ -160,7 +169,7 @@ export default function Contact() {
             <div className="contact-map-wrap">
               <iframe
                 title="Hipermat Rosario"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.0!2d-60.7200!3d-32.9950!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDU5JzQyLjAiUyA2MMKwNDMnMTIuMCJX!5e0!3m2!1ses!2sar!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.122876699495!2d-60.72387492394648!3d-32.994752873571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7aba414935555%3A0x4b5c6d7e8f9a0b1c!2sJuan%20Jos%C3%A9%20Paso%206082%2C%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1716000000000!5m2!1ses!2sar"
                 width="100%"
                 height="220"
                 style={{ border: 0, borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0', display: 'block' }}

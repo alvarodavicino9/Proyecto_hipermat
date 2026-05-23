@@ -152,3 +152,10 @@
   .testimonials-grid { grid-template-columns: 1fr; }
   .rating-summary { flex-direction: column; text-align: center; padding: 20px; }
 }
+
+/* ── MOBILE EXTRA ───────────────────────────────── */
+@media (max-width: 480px) {
+  .rating-summary { padding: 16px; gap: 12px; }
+  .rating-num { font-size: 2.4rem; }
+  .testimonio-card { padding: 20px 16px; }
+}

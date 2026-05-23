@@ -222,3 +222,13 @@
   .quick-link span { display: none; }
   .contact-form { padding: 16px; }
 }
+
+.contact-block-link-plain {
+  font-size: 0.88rem;
+  color: var(--blue);
+  font-weight: 500;
+  transition: color var(--transition);
+  display: block;
+  margin-top: 3px;
+}
+.contact-block-link-plain:hover { color: var(--blue-dark); text-decoration: underline; }
