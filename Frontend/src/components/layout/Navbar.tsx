@@ -50,11 +50,7 @@ export default function Navbar({ cartCount, onCartOpen }: NavbarProps) {
       <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
         <div className="container navbar-inner">
           <button className="navbar-logo" onClick={() => handleNav('/')}>
-            <div className="logo-mark">
-              <span className="logo-hiper">HIPER</span>
-              <span className="logo-mat">MAT</span>
-            </div>
-            <span className="logo-tagline">Otro trato.</span>
+            <img src="/images/logo_nuevo.png" alt="Hipermat Logo" style={{ height: '40px', objectFit: 'contain' }} />
           </button>
 
           <nav className="navbar-links">

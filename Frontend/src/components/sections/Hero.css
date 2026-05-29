@@ -48,6 +48,14 @@
   border: 1px solid rgba(255,255,255,0.15);
 }
 
+.hero-logo-img {
+  width: 140px;
+  margin-bottom: 24px;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 .hero-title { display: flex; flex-direction: column; margin-bottom: 18px; }
 .hero-title-main {
   font-family: var(--font-display);
@@ -178,22 +186,22 @@
 }
 
 /* Gallery */
-.empresa-gallery {
+.empresa-gallery-2x2 {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
   margin-bottom: 44px;
-  height: 360px;
 }
-.empresa-photo-col { display: flex; flex-direction: column; gap: 10px; }
+.empresa-gallery-2x2 .empresa-photo {
+  height: 320px;
+}
 .empresa-photo {
   position: relative; border-radius: var(--radius-lg);
   overflow: hidden; flex: 1; min-height: 0;
 }
-.empresa-photo--large { height: 100%; }
 .empresa-photo img {
   width: 100%; height: 100%;
-  object-fit: cover; display: block;
+  object-fit: cover; object-position: center center; display: block;
   transition: transform 0.4s ease;
 }
 .empresa-photo:hover img { transform: scale(1.05); }
@@ -260,12 +268,11 @@
   .hero-desc { max-width: 100%; }
   .hero-ctas { gap: 10px; }
 
-  .empresa-gallery {
-    grid-template-columns: 1fr 1fr;
+  .empresa-gallery-2x2 {
+    grid-template-columns: 1fr;
     height: auto;
   }
-  .empresa-photo--large { display: none; }
-  .empresa-photo { height: 150px; flex: none; }
+  .empresa-gallery-2x2 .empresa-photo { height: 200px; flex: none; }
   .empresa-photo-overlay { opacity: 1; }
 }
 
@@ -278,9 +285,8 @@
   .hero-features { gap: 7px; }
 
   .empresa-section { padding: 52px 0; }
-  .empresa-gallery { grid-template-columns: 1fr; height: auto; }
-  .empresa-photo-col { flex-direction: row; }
-  .empresa-photo { height: 130px; }
+  .empresa-gallery-2x2 { grid-template-columns: 1fr; }
+  .empresa-gallery-2x2 .empresa-photo { height: 180px; }
   .empresa-valores { grid-template-columns: 1fr 1fr; gap: 12px; }
   .empresa-cta-row { flex-direction: column; align-items: stretch; }
   .empresa-cta-row .btn-primary,

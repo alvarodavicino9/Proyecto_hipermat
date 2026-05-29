@@ -26,12 +26,9 @@ const pasos = [
 ];
 
 const zonas = [
-  { nombre: 'Rosario Centro', tiempo: 'Mismo día', icono: '🟢' },
-  { nombre: 'Norte Rosario', tiempo: '24 hs', icono: '🟢' },
-  { nombre: 'Sur Rosario', tiempo: '24 hs', icono: '🟢' },
-  { nombre: 'Oeste Rosario', tiempo: '24 hs', icono: '🟢' },
-  { nombre: 'Gran Rosario', tiempo: '24-48 hs', icono: '🟡' },
-  { nombre: 'Zona rural cercana', tiempo: 'Consultar', icono: '🟡' },
+  { nombre: 'Rosario', tiempo: '24 hs', icono: '🟢' },
+  { nombre: 'Funes', tiempo: '24 hs', icono: '🟢' },
+  { nombre: 'Alrededores', tiempo: '24 hs', icono: '🟢' },
 ];
 
 
@@ -129,7 +126,6 @@ export default function Services() {
                   'El costo de envío se informa al confirmar el pedido según zona y volumen',
                   'Para pedidos grandes el envío puede ser sin cargo — consultá',
                   'Coordinamos horario de entrega a tu conveniencia',
-                  'Nuestros camiones tienen capacidad para hasta 8 toneladas',
                 ].map((c, i) => (
                   <div key={i} className="condicion-item">
                     <CheckCircle size={15} className="condicion-check" />

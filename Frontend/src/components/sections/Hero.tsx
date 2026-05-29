@@ -1,7 +1,7 @@
 import { ArrowRight, Truck, Star, Shield, Package } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { contactInfo } from '../../data';
-import { productImages } from '../../data/images';
+
 import './Hero.css';
 
 const WA_ICON = (
@@ -25,9 +25,10 @@ export default function Hero() {
         <div className="container hero-content">
           <div className="hero-text">
             <div className="hero-badge"><Star size={12} fill="currentColor" />El mejor precio de Rosario</div>
+            <img src="/images/logo_nuevo.png" alt="Hipermat Logo" className="hero-logo-img" />
             <h1 className="hero-title">
-              <span className="hero-title-main">MATERIALES DE</span>
-              <span className="hero-title-accent">CONSTRUCCIÓN</span>
+              <span className="hero-title-main">HIPERMAT</span>
+              <span className="hero-title-accent">MATERIALES DE CONSTRUCCIÓN</span>
               <span className="hero-title-sub">Por mayor y menor · Rosario</span>
             </h1>
             <p className="hero-desc">
@@ -53,7 +54,7 @@ export default function Hero() {
           <div className="hero-visual">
             <div className="hero-main-photo-wrap">
               <img
-                src={productImages['empresa-cartel-camion']}
+                src="/images/foto1.jpg"
                 alt="Hipermat - camión y cartel en Rosario"
                 className="hero-main-photo"
               />
@@ -98,33 +99,22 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Grid de fotos */}
-          <div className="empresa-gallery">
-            <div className="empresa-photo empresa-photo--large">
-              <img src={productImages['empresa-camiones']} alt="Flota de camiones Hipermat" />
-              <div className="empresa-photo-overlay">
-                <span>Flota propia de camiones</span>
-              </div>
+          <div className="empresa-gallery-2x2">
+            <div className="empresa-photo">
+              <img src="/images/foto1.jpg" alt="Flota de camiones Hipermat" />
+              <div className="empresa-photo-overlay"><span>Flota propia de camiones</span></div>
             </div>
-            <div className="empresa-photo-col">
-              <div className="empresa-photo">
-                <img src={productImages['empresa-deposito']} alt="Depósito Hipermat" />
-                <div className="empresa-photo-overlay"><span>Amplio depósito en Rosario</span></div>
-              </div>
-              <div className="empresa-photo empresa-photo--dark">
-                <img src={productImages['empresa-servicio-descarga']} alt="Servicio de descarga" />
-                <div className="empresa-photo-overlay"><span>Servicio de descarga incluido</span></div>
-              </div>
+            <div className="empresa-photo">
+              <img src="/images/foto2.jpg" alt="Depósito Hipermat" />
+              <div className="empresa-photo-overlay"><span>Amplio depósito en Rosario</span></div>
             </div>
-            <div className="empresa-photo-col">
-              <div className="empresa-photo empresa-photo--dark">
-                <img src={productImages['empresa-mayorista']} alt="Venta mayorista y minorista" />
-                <div className="empresa-photo-overlay"><span>Mayoristas y minoristas</span></div>
-              </div>
-              <div className="empresa-photo">
-                <img src={productImages['empresa-materializa']} alt="Materializa tus sueños" />
-                <div className="empresa-photo-overlay"><span>Materializá tus sueños</span></div>
-              </div>
+            <div className="empresa-photo">
+              <img src="/images/foto3.jpg" alt="Servicio de descarga" />
+              <div className="empresa-photo-overlay"><span>Servicio de descarga incluido</span></div>
+            </div>
+            <div className="empresa-photo">
+              <img src="/images/foto4.jpg" alt="Venta mayorista y minorista" />
+              <div className="empresa-photo-overlay"><span>Mayoristas y minoristas</span></div>
             </div>
           </div>
 

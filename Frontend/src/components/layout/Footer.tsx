@@ -53,8 +53,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer-brand">
             <button className="footer-logo" onClick={() => navigate('/')}>
-              <span className="footer-logo-hiper">HIPER</span>
-              <span className="footer-logo-mat">MAT</span>
+              <img src="/images/logo_nuevo.png" alt="Hipermat Logo" style={{ height: '40px', objectFit: 'contain' }} />
             </button>
             <p className="footer-tagline">Otro trato.</p>
             <p className="footer-desc">
