@@ -6,7 +6,7 @@ export default function ServicesPage() {
     <div className="page-wrapper">
       <SEO
         title="Servicios de Envío y Asesoramiento"
-        description="Envíos con hidrogrúa a toda Rosario y zona. Asesoramiento por WhatsApp, cotizaciones y presupuestos sin cargo. Venta por mayor y menor sin mínimo."
+        description="Envíos con hidrogrúa a toda Rosario y zona. Asesoramiento por WhatsApp, cotizaciones y presupuestos sin cargo. Venta mayorista y minorista sin mínimo."
         path="/servicios"
       />
       <Services />

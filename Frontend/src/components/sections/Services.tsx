@@ -12,9 +12,9 @@ const WA = (size = 20) => (
 const services = [
   { icon: <Truck size={30} />, title: 'Envíos y Descargas', desc: 'Flota propia de camiones con hidrogrúa. Entrega y descarga del material incluida en toda Rosario y zona.', color: 'blue' },
   { icon: <MessageCircle size={30} />, title: 'Asesoramiento', desc: 'Consultá por WhatsApp sin compromiso. Nuestros empleados con experiencia te guían en la elección correcta.', color: 'red' },
-  { icon: <DollarSign size={30} />, title: 'Cotizaciones', desc: 'Te hacemos el presupuesto de tu obra al instante. El mejor precio de Rosario garantizado.', color: 'blue' },
+  { icon: <DollarSign size={30} />, title: 'Cotizaciones', desc: 'Te hacemos el presupuesto de tu obra al instante. Mejoramos cualquier presupuesto.', color: 'blue' },
   { icon: <Users size={30} />, title: 'Atención personalizada', desc: 'Cada pedido es atendido individualmente. No sos un número, sos un cliente.', color: 'red' },
-  { icon: <Package size={30} />, title: 'Mayor y menor', desc: 'Desde una bolsa de cemento hasta proyectos completos. Sin pedido mínimo.', color: 'blue' },
+  { icon: <Package size={30} />, title: 'Mayorista y minorista', desc: 'Desde una bolsa de cemento hasta proyectos completos. Sin pedido mínimo.', color: 'blue' },
   { icon: <Shield size={30} />, title: 'Calidad garantizada', desc: 'Solo trabajamos con marcas líderes del mercado con garantía de fábrica.', color: 'red' },
 ];
 

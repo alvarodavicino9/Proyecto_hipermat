@@ -24,8 +24,8 @@ export default function NotFoundPage() {
             <button className="btn-primary" onClick={() => navigate('/')}>
               Ir al inicio
             </button>
-            <button className="btn-secondary" onClick={() => navigate('/catalogo')}>
-              Ver catálogo
+            <button className="btn-secondary" onClick={() => navigate('/servicios')}>
+              Ver servicios
             </button>
           </div>
           <a

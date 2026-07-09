@@ -6,7 +6,7 @@ export default function AboutPage() {
     <div className="page-wrapper">
       <SEO
         title="Quiénes Somos"
-        description="Hipermat es un corralón en Rosario con más de 20 años de experiencia. Juan José Paso 6082. Atención personalizada, empleados capacitados y el mejor precio de Rosario."
+        description="Hipermat es un corralón en Rosario con más de 40 años de experiencia. Juan José Paso 6082. Atención personalizada, empleados capacitados y el mejor precio de Rosario."
         path="/nosotros"
       />
       <About />

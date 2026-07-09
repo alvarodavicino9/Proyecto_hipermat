@@ -1,6 +1,6 @@
 import { Instagram, MapPin, Clock, Phone, Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { contactInfo, categories } from '../../data';
+import { contactInfo } from '../../data';
 import './Footer.css';
 
 const WA_SVG = (
@@ -11,7 +11,6 @@ const WA_SVG = (
 
 const navLinks = [
   { path: '/', label: 'Inicio' },
-  { path: '/catalogo', label: 'Catálogo' },
   { path: '/servicios', label: 'Servicios' },
   { path: '/nosotros', label: 'Nosotros' },
   { path: '/contacto', label: 'Contacto' },
@@ -39,8 +38,8 @@ export default function Footer() {
             >
               {WA_SVG} Pedir presupuesto
             </a>
-            <button className="footer-cta-btn footer-cta-btn--cat" onClick={() => navigate('/catalogo')}>
-              Ver catálogo →
+            <button className="footer-cta-btn footer-cta-btn--cat" onClick={() => navigate('/contacto')}>
+              Contactanos →
             </button>
           </div>
         </div>
@@ -57,8 +56,8 @@ export default function Footer() {
             </button>
             <p className="footer-tagline">Otro trato.</p>
             <p className="footer-desc">
-              Corralón de materiales de construcción en Rosario. Venta por mayor y menor.
-              Más de 20 años en el rubro.
+              Corralón de materiales de construcción en Rosario. Venta mayorista y minorista.
+              Más de 40 años en el rubro.
             </p>
             <div className="footer-socials">
               <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" className="footer-social footer-social--ig" aria-label="Instagram">
@@ -82,17 +81,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Categorías */}
+          {/* Servicios */}
           <div className="footer-col">
-            <h4 className="footer-col-title">Categorías</h4>
+            <h4 className="footer-col-title">Servicios</h4>
             <ul className="footer-links">
-              {categories.slice(0, 6).map(cat => (
-                <li key={cat.id}>
-                  <button className="footer-link" onClick={() => navigate('/catalogo')}>
-                    {cat.icon} {cat.name}
-                  </button>
-                </li>
-              ))}
+              <li><button className="footer-link" onClick={() => navigate('/servicios')}>🚛 Envíos y descargas</button></li>
+              <li><button className="footer-link" onClick={() => navigate('/servicios')}>💬 Asesoramiento</button></li>
+              <li><button className="footer-link" onClick={() => navigate('/servicios')}>💰 Cotizaciones</button></li>
+              <li><button className="footer-link" onClick={() => navigate('/servicios')}>🛡️ Calidad garantizada</button></li>
             </ul>
           </div>
 

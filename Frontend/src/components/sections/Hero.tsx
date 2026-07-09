@@ -35,8 +35,8 @@ export default function Hero() {
               Atención personalizada y los mejores precios garantizados.
             </p>
             <div className="hero-ctas">
-              <button className="btn-primary hero-cta" onClick={() => navigate('/catalogo')}>
-                Ver catálogo <ArrowRight size={18} />
+              <button className="btn-primary hero-cta" onClick={() => navigate('/contacto')}>
+                Contactanos <ArrowRight size={18} />
               </button>
               <a href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hero-cta-wa">
                 {WA_ICON} Pedí cotización
@@ -58,7 +58,7 @@ export default function Hero() {
                 className="hero-main-photo"
               />
               <div className="hero-photo-badge">
-                <span>+20 años en el rubro</span>
+                <span>+40 años en el rubro</span>
               </div>
             </div>
 
@@ -101,7 +101,7 @@ export default function Hero() {
               TU CORRALÓN DE <span style={{color:'var(--red)'}}>CONFIANZA</span>
             </h2>
             <p className="empresa-subtitle">
-              Más de 20 años abasteciendo obras en Rosario y zona.
+              Más de 40 años abasteciendo obras en Rosario y zona.
               Flota propia de camiones con hidrogrúa para entrega y descarga.
             </p>
           </div>
@@ -143,8 +143,8 @@ export default function Hero() {
 
           {/* CTA final */}
           <div className="empresa-cta-row">
-            <button className="btn-primary" onClick={() => navigate('/catalogo')}>
-              Ver catálogo completo <ArrowRight size={16} />
+            <button className="btn-primary" onClick={() => navigate('/contacto')}>
+              Contactanos <ArrowRight size={16} />
             </button>
             <a href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent('Hola Hipermat! Quiero hacer una consulta.')}`}
                target="_blank" rel="noopener noreferrer" className="btn-secondary">
