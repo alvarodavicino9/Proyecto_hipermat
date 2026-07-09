@@ -18,19 +18,18 @@ export default function Hero() {
       {/* ── HERO PRINCIPAL ── */}
       <section className="hero">
         <div className="hero-bg">
-          <div className="hero-grid" />
           <div className="hero-gradient" />
         </div>
 
         <div className="container hero-content">
           <div className="hero-text">
-            <div className="hero-badge"><Star size={12} fill="currentColor" />El mejor precio de Rosario</div>
-            <img src="/images/logo_nuevo.png" alt="Hipermat Logo" className="hero-logo-img" />
+            <div className="hero-badge"><Star size={12} fill="currentColor" />Mejoramos cualquier presupuesto</div>
             <h1 className="hero-title">
               <span className="hero-title-main">HIPERMAT</span>
               <span className="hero-title-accent">MATERIALES DE CONSTRUCCIÓN</span>
-              <span className="hero-title-sub">Por mayor y menor · Rosario</span>
+              <span className="hero-title-sub">Mayorista y minorista · Rosario</span>
             </h1>
+            <p className="hero-slogan">"Proveemos tu obra, desde el primer ladrillo"</p>
             <p className="hero-desc">
               Cementos, ladrillos, griferías, adhesivos y más de 500 productos.
               Atención personalizada y los mejores precios garantizados.
@@ -46,11 +45,11 @@ export default function Hero() {
             <div className="hero-features">
               <div className="hero-feature"><Truck size={18} /><span>Envíos y descargas a Rosario</span></div>
               <div className="hero-feature"><Shield size={18} /><span>Garantía en todos los productos</span></div>
-              <div className="hero-feature"><Package size={18} /><span>Mayor y menor sin mínimo</span></div>
+              <div className="hero-feature"><Package size={18} /><span>Mayorista y minorista sin mínimo</span></div>
             </div>
           </div>
 
-          {/* Foto principal: cartel + camión */}
+          {/* Fotos: cartel + camión, y depósito */}
           <div className="hero-visual">
             <div className="hero-main-photo-wrap">
               <img
@@ -63,7 +62,15 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Stats debajo de la foto */}
+            <div className="hero-secondary-photo-wrap">
+              <img
+                src="/images/foto2.jpg"
+                alt="Depósito Hipermat en Rosario"
+                className="hero-secondary-photo"
+              />
+            </div>
+
+            {/* Stats debajo de las fotos */}
             <div className="hero-stats-row">
               <div className="hero-stat-item">
                 <span className="hero-stat-num">+500</span>
@@ -71,8 +78,8 @@ export default function Hero() {
               </div>
               <div className="hero-stat-div" />
               <div className="hero-stat-item">
-                <span className="hero-stat-num">Mayor</span>
-                <span className="hero-stat-lbl">Y menor</span>
+                <span className="hero-stat-num">Mayorista</span>
+                <span className="hero-stat-lbl">Y minorista</span>
               </div>
               <div className="hero-stat-div" />
               <div className="hero-stat-item">
@@ -124,7 +131,7 @@ export default function Hero() {
               { icon: '🏗️', title: 'Todo en un lugar', desc: 'Cementos, ladrillos, adhesivos, griferías y más de 500 productos disponibles.' },
               { icon: '🚛', title: 'Envíos con hidrogrúa', desc: 'Flota propia de camiones con descarga incluida a toda Rosario y zona.' },
               { icon: '💬', title: 'Asesoramiento real', desc: 'Empleados con experiencia en el rubro te ayudan a elegir el material correcto.' },
-              { icon: '💰', title: 'Mejor precio', desc: 'Precios competitivos por mayor y menor. Pedí tu cotización sin compromiso.' },
+              { icon: '💰', title: 'Mejor precio', desc: 'Precios competitivos, mayorista y minorista. Pedí tu cotización sin compromiso.' },
             ].map((v, i) => (
               <div key={i} className="empresa-valor">
                 <span className="empresa-valor-icon">{v.icon}</span>
