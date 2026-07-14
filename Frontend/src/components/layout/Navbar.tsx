@@ -114,6 +114,25 @@ export default function Navbar() {
 
         <div className="navbar-progress" style={{ width: `${scrollProgress}%` }} />
       </header>
+
+      {/* Barra de secciones también en mobile: dock fijo abajo */}
+      <nav className="mobile-dock">
+        {navLinks.map(link => {
+          const Icon = link.icon;
+          const active = location.pathname === link.path;
+          return (
+            <button
+              key={link.path}
+              className={`mobile-dock-item ${active ? 'mobile-dock-item--active' : ''}`}
+              onClick={() => handleNav(link.path)}
+              aria-label={link.label}
+            >
+              <Icon size={20} />
+              <span>{link.label}</span>
+            </button>
+          );
+        })}
+      </nav>
     </>
   );
 }

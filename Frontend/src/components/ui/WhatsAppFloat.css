@@ -219,8 +219,12 @@
 .wa-panel-footer:hover { background: #20b558; }
 
 /* Mobile */
+@media (max-width: 900px) {
+  .wa-float-btn { bottom: 92px; }
+  .wa-bubble, .wa-panel { bottom: 164px; }
+}
 @media (max-width: 480px) {
-  .wa-float-btn { bottom: 20px; right: 20px; width: 54px; height: 54px; }
-  .wa-panel { right: 12px; width: calc(100vw - 24px); bottom: 90px; }
-  .wa-bubble { right: 12px; bottom: 90px; }
+  .wa-float-btn { bottom: 84px; right: 20px; width: 54px; height: 54px; }
+  .wa-panel { right: 12px; width: calc(100vw - 24px); bottom: 154px; }
+  .wa-bubble { right: 12px; bottom: 154px; }
 }
