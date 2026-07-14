@@ -1,6 +1,9 @@
+import { useEffect, useRef } from 'react';
 import { ArrowRight, Truck, Star, Shield, Package } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { contactInfo } from '../../data';
+import { useMagnetic, useRipple, useTiltSection } from '../../hooks/useInteractions';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 import './Hero.css';
 
@@ -12,22 +15,62 @@ const WA_ICON = (
 
 export default function Hero() {
   const navigate = useNavigate();
+  const ctaMagnetic1 = useMagnetic<HTMLButtonElement>();
+  const ctaMagnetic2 = useMagnetic<HTMLAnchorElement>();
+  const igMagnetic = useMagnetic<HTMLAnchorElement>();
+  const ripple = useRipple();
+  const tiltSectionRef = useTiltSection<HTMLElement>();
+  const bgRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const empresaAnim = useScrollAnimation();
+
+  // Parallax on scroll: fondo se desplaza, texto se desvanece
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (bgRef.current) {
+        bgRef.current.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
+      }
+      if (textRef.current) {
+        const op = Math.max(0, 1 - y / 480);
+        textRef.current.style.opacity = String(op);
+        textRef.current.style.transform = `translate3d(0, ${y * 0.18}px, 0)`;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <>
       {/* ── HERO PRINCIPAL ── */}
-      <section className="hero">
-        <div className="hero-bg">
+      <section className="hero" ref={tiltSectionRef}>
+        <div className="hero-bg" ref={bgRef}>
           <div className="hero-gradient" />
         </div>
 
-        <div className="container hero-content">
+        {/* Aurora animada */}
+        <div className="hero-aurora">
+          <div className="aurora-blob aurora-blob--1" />
+          <div className="aurora-blob aurora-blob--2" />
+          <div className="aurora-blob aurora-blob--3" />
+        </div>
+
+        {/* Orbes flotantes */}
+        <div className="hero-orb hero-orb--1" />
+        <div className="hero-orb hero-orb--2" />
+        <div className="hero-orb hero-orb--3" />
+        <div className="hero-deco hero-deco--square" />
+        <div className="hero-deco hero-deco--pill" />
+
+        <div className="container hero-content" ref={textRef}>
           <div className="hero-text">
-            <div className="hero-badge"><Star size={12} fill="currentColor" />Mejoramos cualquier presupuesto</div>
+            <div className="hero-badge"><Star size={12} fill="currentColor" className="hero-badge-star" />Mejoramos cualquier presupuesto</div>
             <h1 className="hero-title">
-              <span className="hero-title-main">HIPERMAT</span>
-              <span className="hero-title-accent">MATERIALES DE CONSTRUCCIÓN</span>
-              <span className="hero-title-sub">Mayorista y minorista · Rosario</span>
+              <span className="hero-title-main hero-title-anim1">HIPERMAT</span>
+              <span className="hero-title-accent hero-title-anim2">MATERIALES DE CONSTRUCCIÓN</span>
+              <span className="hero-title-sub hero-title-anim3">Mayorista y minorista · Rosario</span>
             </h1>
             <p className="hero-slogan">"Proveemos tu obra, desde el primer ladrillo"</p>
             <p className="hero-desc">
@@ -35,10 +78,10 @@ export default function Hero() {
               Atención personalizada y los mejores precios garantizados.
             </p>
             <div className="hero-ctas">
-              <button className="btn-primary hero-cta" onClick={() => navigate('/contacto')}>
+              <button ref={ctaMagnetic1} data-magnetic data-ripple-host onClick={(e) => { ripple(e); navigate('/contacto'); }} className="btn-primary hero-cta">
                 Contactanos <ArrowRight size={18} />
               </button>
-              <a href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hero-cta-wa">
+              <a ref={ctaMagnetic2} data-magnetic data-ripple-host onClick={ripple} href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hero-cta-wa">
                 {WA_ICON} Pedí cotización
               </a>
             </div>
@@ -49,9 +92,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Fotos: cartel + camión, y depósito */}
+          {/* Fotos: cartel + camión, y depósito — tarjetas con tilt 3D por mouse */}
           <div className="hero-visual">
-            <div className="hero-main-photo-wrap">
+            <div className="hero-main-photo-wrap" data-tilt="1">
               <img
                 src="/images/foto1.jpg"
                 alt="Hipermat - camión y cartel en Rosario"
@@ -62,7 +105,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="hero-secondary-photo-wrap">
+            <div className="hero-secondary-photo-wrap" data-tilt="1">
               <img
                 src="/images/foto2.jpg"
                 alt="Depósito Hipermat en Rosario"
@@ -71,7 +114,7 @@ export default function Hero() {
             </div>
 
             {/* Stats debajo de las fotos */}
-            <div className="hero-stats-row">
+            <div className="hero-stats-row" data-tilt="1">
               <div className="hero-stat-item">
                 <span className="hero-stat-num">+500</span>
                 <span className="hero-stat-lbl">Productos</span>
@@ -89,16 +132,18 @@ export default function Hero() {
             </div>
           </div>
         </div>
+
+        <div className="hero-scroll-chevron">⌄</div>
         <div className="hero-stripe" />
       </section>
 
       {/* ── SECCIÓN EMPRESA: fotos reales ── */}
       <section className="empresa-section">
         <div className="container">
-          <div className="empresa-header">
+          <div ref={empresaAnim.ref} className={`empresa-header anim-fade-up-3d ${empresaAnim.visible ? 'anim-visible-3d' : ''}`}>
             <span className="section-eyebrow">Conocé Hipermat</span>
             <h2 className="section-title empresa-title">
-              TU CORRALÓN DE <span style={{color:'var(--red)'}}>CONFIANZA</span>
+              TU CORRALÓN DE <span style={{ color: 'var(--red)' }}>CONFIANZA</span>
             </h2>
             <p className="empresa-subtitle">
               Más de 40 años abasteciendo obras en Rosario y zona.
@@ -146,7 +191,7 @@ export default function Hero() {
             <button className="btn-primary" onClick={() => navigate('/contacto')}>
               Contactanos <ArrowRight size={16} />
             </button>
-            <a href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent('Hola Hipermat! Quiero hacer una consulta.')}`}
+            <a ref={igMagnetic} data-magnetic href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent('Hola Hipermat! Quiero hacer una consulta.')}`}
                target="_blank" rel="noopener noreferrer" className="btn-secondary">
               {WA_ICON} Contactar por WhatsApp
             </a>

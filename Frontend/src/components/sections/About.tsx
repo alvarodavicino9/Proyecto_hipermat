@@ -1,6 +1,7 @@
 import { CheckCircle, Instagram } from 'lucide-react';
 import { contactInfo } from '../../data';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useMagnetic } from '../../hooks/useInteractions';
 import './About.css';
 
 const values = [
@@ -16,6 +17,7 @@ export default function About() {
   const left  = useScrollAnimation();
   const right = useScrollAnimation();
   const stats = useScrollAnimation();
+  const igMagnetic = useMagnetic<HTMLAnchorElement>();
 
   return (
     <section id="nosotros" className="about">
@@ -23,7 +25,7 @@ export default function About() {
         {/* Left */}
         <div
           ref={left.ref}
-          className={`about-text anim-fade-left ${left.visible ? 'anim-visible' : ''}`}
+          className={`about-text anim-fade-left-3d ${left.visible ? 'anim-visible-3d' : ''}`}
         >
           <span className="section-eyebrow">Quiénes somos</span>
           <h2 className="section-title about-title">
@@ -48,7 +50,19 @@ export default function About() {
               </li>
             ))}
           </ul>
+
+          {/* Foto real del depósito con tilt 3D sutil */}
+          <div className="about-photo-wrap">
+            <img
+              src="/images/foto2.jpg"
+              alt="Depósito Hipermat en Rosario"
+              className="about-photo"
+            />
+          </div>
+
           <a
+            ref={igMagnetic}
+            data-magnetic
             href={contactInfo.instagram}
             target="_blank"
             rel="noopener noreferrer"
@@ -63,9 +77,9 @@ export default function About() {
         {/* Right */}
         <div
           ref={right.ref}
-          className={`about-cards anim-fade-right ${right.visible ? 'anim-visible' : ''}`}
+          className={`about-cards anim-fade-right-3d ${right.visible ? 'anim-visible-3d' : ''}`}
         >
-          <div className="about-card about-card--blue">
+          <div className="about-card about-card--blue about-card--tilt">
             <div className="about-card-icon">📍</div>
             <div>
               <h4 className="about-card-title">Ubicación</h4>
@@ -82,7 +96,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="about-card about-card--red">
+          <div className="about-card about-card--red about-card--tilt">
             <div className="about-card-icon">🕐</div>
             <div>
               <h4 className="about-card-title">Horarios</h4>
@@ -92,7 +106,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="about-card about-card--dark">
+          <div className="about-card about-card--dark about-card--tilt">
             <div className="about-card-icon">💬</div>
             <div>
               <h4 className="about-card-title">WhatsApp</h4>

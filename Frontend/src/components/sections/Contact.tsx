@@ -2,6 +2,7 @@ import { MapPin, Clock, Phone, Instagram, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { contactInfo } from '../../data';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useMagnetic, useRipple } from '../../hooks/useInteractions';
 import './Contact.css';
 
 const WA_SVG = (size = 20) => (
@@ -12,8 +13,13 @@ const WA_SVG = (size = 20) => (
 
 export default function Contact() {
   const header = useScrollAnimation();
+  const gallery = useScrollAnimation();
   const form   = useScrollAnimation();
   const info   = useScrollAnimation();
+  const waMagnetic = useMagnetic<HTMLAnchorElement>();
+  const igMagnetic = useMagnetic<HTMLAnchorElement>();
+  const catMagnetic = useMagnetic<HTMLAnchorElement>();
+  const ripple = useRipple();
 
   const [fields, setFields] = useState({ nombre: '', telefono: '', mensaje: '' });
   const [sent, setSent] = useState(false);
@@ -36,7 +42,7 @@ export default function Contact() {
         {/* Header */}
         <div
           ref={header.ref}
-          className={`contact-header anim-fade-up ${header.visible ? 'anim-visible' : ''}`}
+          className={`contact-header anim-fade-up-3d ${header.visible ? 'anim-visible-3d' : ''}`}
         >
           <span className="section-eyebrow">Estamos para ayudarte</span>
           <h2 className="section-title contact-title">CONTACTO</h2>
@@ -45,12 +51,25 @@ export default function Contact() {
           </p>
         </div>
 
+        {/* Galería de fotos reales con tilt 3D opuesto */}
+        <div
+          ref={gallery.ref}
+          className={`contact-gallery anim-fade-up-3d ${gallery.visible ? 'anim-visible-3d' : ''}`}
+        >
+          <div className="contact-gallery-photo contact-gallery-photo--left">
+            <img src="/images/foto3.jpg" alt="Servicio de descarga Hipermat" />
+          </div>
+          <div className="contact-gallery-photo contact-gallery-photo--right">
+            <img src="/images/foto4.jpg" alt="Local Hipermat en Rosario" />
+          </div>
+        </div>
+
         <div className="contact-grid">
 
           {/* Formulario → WhatsApp */}
           <div
             ref={form.ref}
-            className={`contact-form-wrap anim-fade-left ${form.visible ? 'anim-visible' : ''}`}
+            className={`contact-form-wrap anim-fade-left-3d ${form.visible ? 'anim-visible-3d' : ''}`}
           >
             <div className="contact-form-header">
               <h3 className="contact-form-title">Envianos tu consulta</h3>
@@ -104,13 +123,13 @@ export default function Contact() {
 
             {/* Quick links */}
             <div className="contact-quick">
-              <a href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="quick-link quick-link--wa">
+              <a ref={waMagnetic} data-magnetic data-ripple-host onClick={ripple} href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="quick-link quick-link--wa">
                 {WA_SVG(16)} Chat directo
               </a>
-              <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" className="quick-link quick-link--ig">
+              <a ref={igMagnetic} data-magnetic href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" className="quick-link quick-link--ig">
                 <Instagram size={16} /> Instagram
               </a>
-              <a href="https://wa.me/c/5493414680227" target="_blank" rel="noopener noreferrer" className="quick-link quick-link--cat">
+              <a ref={catMagnetic} data-magnetic href="https://wa.me/c/5493414680227" target="_blank" rel="noopener noreferrer" className="quick-link quick-link--cat">
                 📦 Ver catálogo
               </a>
             </div>
@@ -119,7 +138,7 @@ export default function Contact() {
           {/* Info + Mapa */}
           <div
             ref={info.ref}
-            className={`contact-info-wrap anim-fade-right ${info.visible ? 'anim-visible' : ''}`}
+            className={`contact-info-wrap anim-fade-right-3d ${info.visible ? 'anim-visible-3d' : ''}`}
           >
             {/* Info blocks */}
             <div className="contact-info-blocks">

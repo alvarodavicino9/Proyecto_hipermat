@@ -21,6 +21,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+  perspective: 1400px;
 }
 
 .service-card {
@@ -33,6 +34,16 @@
 .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .service-card--blue:hover { border-color: var(--blue); background: #f0f5ff; }
 .service-card--red:hover  { border-color: var(--red);  background: #fff5f5; }
+
+/* Tilt 3D on hover */
+.service-card--tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(.2,.8,.2,1), box-shadow 0.45s, background 0.3s, border-color 0.3s;
+}
+.service-card--tilt:hover {
+  transform: perspective(900px) rotateX(5deg) rotateY(-5deg) translateY(-6px);
+  box-shadow: 0 30px 50px -26px rgba(0,0,0,0.25);
+}
 
 .service-icon {
   width: 56px; height: 56px;

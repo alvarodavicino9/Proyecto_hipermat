@@ -48,6 +48,31 @@
   margin-top: 2px;
 }
 
+/* Foto real con tilt 3D sutil */
+.about-photo-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 28px;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  transform: perspective(1200px) rotateX(2deg) rotateY(-2deg);
+  transition: transform 0.5s cubic-bezier(.2,.8,.2,1), box-shadow 0.5s;
+  box-shadow: 0 30px 54px -26px rgba(15,48,112,0.4);
+  border: 1px solid var(--line, var(--gray-200));
+}
+.about-photo-wrap:hover {
+  transform: perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(-4px);
+  box-shadow: 0 40px 64px -22px rgba(15,48,112,0.45);
+}
+.about-photo {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
 .about-instagram {
   display: inline-flex;
   align-items: center;
@@ -90,6 +115,18 @@
   border-radius: var(--radius-lg);
   border: 2px solid transparent;
 }
+
+.about-card--tilt {
+  perspective: 900px;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(.2,.8,.2,1), box-shadow 0.45s;
+}
+.about-card--tilt:hover {
+  transform: perspective(900px) rotateX(4deg) rotateY(-3deg) translateY(-4px);
+}
+.about-card--blue.about-card--tilt:hover { box-shadow: 0 26px 44px -26px rgba(15,48,112,0.35); }
+.about-card--red.about-card--tilt:hover { box-shadow: 0 26px 44px -26px rgba(168,31,31,0.3); }
+.about-card--dark.about-card--tilt:hover { box-shadow: 0 26px 44px -26px rgba(0,0,0,0.4); }
 
 .about-card--blue {
   background: #e8f0ff;
@@ -220,4 +257,5 @@
   .about-stats { padding: 16px; }
   .about-stat-num { font-size: 1.4rem; }
   .about-instagram { width: 100%; justify-content: center; }
+  .about-photo-wrap, .about-card--tilt { transform: none !important; }
 }

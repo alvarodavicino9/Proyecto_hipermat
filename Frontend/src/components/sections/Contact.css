@@ -10,6 +10,36 @@
 .contact-title { color: var(--blue-dark); }
 .contact-subtitle { color: var(--text-muted); font-size: 1rem; margin-top: 10px; }
 
+/* Galería de fotos reales con tilt 3D opuesto */
+.contact-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 52px;
+  perspective: 1400px;
+}
+.contact-gallery-photo {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(.2,.8,.2,1), box-shadow 0.45s;
+  box-shadow: 0 24px 44px -24px rgba(15,48,112,0.35);
+}
+.contact-gallery-photo img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.contact-gallery-photo--left:hover {
+  transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(-5px);
+  box-shadow: 0 34px 54px -20px rgba(15,48,112,0.4);
+}
+.contact-gallery-photo--right:hover {
+  transform: perspective(900px) rotateX(4deg) rotateY(4deg) translateY(-5px);
+  box-shadow: 0 34px 54px -20px rgba(15,48,112,0.4);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -217,6 +247,11 @@
 @media (max-width: 900px) {
   .contact-grid { grid-template-columns: 1fr; }
   .contact { padding: 64px 0; }
+}
+@media (max-width: 600px) {
+  .contact-gallery { grid-template-columns: 1fr; margin-bottom: 32px; }
+  .contact-gallery-photo { transform: none !important; }
+  .contact-gallery-photo img { height: 160px; }
 }
 @media (max-width: 480px) {
   .quick-link span { display: none; }

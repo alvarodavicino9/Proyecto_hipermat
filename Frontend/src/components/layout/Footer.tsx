@@ -1,6 +1,7 @@
 import { Instagram, MapPin, Clock, Phone, Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { contactInfo } from '../../data';
+import { useMagnetic, useRipple } from '../../hooks/useInteractions';
 import './Footer.css';
 
 const WA_SVG = (
@@ -19,6 +20,8 @@ const navLinks = [
 export default function Footer() {
   const navigate = useNavigate();
   const year = new Date().getFullYear();
+  const waMagnetic = useMagnetic<HTMLAnchorElement>();
+  const ripple = useRipple();
 
   return (
     <footer className="footer">
@@ -31,6 +34,10 @@ export default function Footer() {
           </div>
           <div className="footer-cta-btns">
             <a
+              ref={waMagnetic}
+              data-magnetic
+              data-ripple-host
+              onClick={ripple}
               href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent('Hola! Necesito un presupuesto.')}`}
               target="_blank"
               rel="noopener noreferrer"

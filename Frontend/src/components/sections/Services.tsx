@@ -1,4 +1,5 @@
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useMagnetic, useRipple } from '../../hooks/useInteractions';
 import { Truck, MessageCircle, Users, DollarSign, Package, Shield, MapPin, Clock, CheckCircle, Phone } from 'lucide-react';
 import { contactInfo } from '../../data';
 import './Services.css';
@@ -36,6 +37,10 @@ export default function Services() {
   const svcAnim  = useScrollAnimation();
   const procAnim = useScrollAnimation();
   const envAnim  = useScrollAnimation();
+  const pedidoMagnetic = useMagnetic<HTMLAnchorElement>();
+  const zonaMagnetic = useMagnetic<HTMLAnchorElement>();
+  const presupuestoMagnetic = useMagnetic<HTMLAnchorElement>();
+  const ripple = useRipple();
   const waPresupuesto = `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent('Hola! Necesito un presupuesto para materiales de construcción.')}`;
 
   return (
@@ -43,14 +48,14 @@ export default function Services() {
       {/* ── SERVICIOS PRINCIPALES ── */}
       <section className="services">
         <div className="container">
-          <div ref={svcAnim.ref} className={`services-header anim-fade-up ${svcAnim.visible ? "anim-visible" : ""}`}>
+          <div ref={svcAnim.ref} className={`services-header anim-fade-up-3d ${svcAnim.visible ? "anim-visible-3d" : ""}`}>
             <span className="section-eyebrow">Lo que ofrecemos</span>
             <h2 className="section-title">NUESTROS <span className="title-red">SERVICIOS</span></h2>
             <p className="services-subtitle">Más que un corralón — somos tu socio en la construcción.</p>
           </div>
           <div className="services-grid">
             {services.map((s, i) => (
-              <div key={i} className={`service-card service-card--${s.color}`}>
+              <div key={i} className={`service-card service-card--${s.color} service-card--tilt`}>
                 <div className={`service-icon service-icon--${s.color}`}>{s.icon}</div>
                 <h3 className="service-title">{s.title}</h3>
                 <p className="service-desc">{s.desc}</p>
@@ -63,7 +68,7 @@ export default function Services() {
       {/* ── PROCESO DE PEDIDO ── */}
       <section className="proceso-section">
         <div className="container">
-          <div ref={procAnim.ref} className={`proceso-header anim-fade-up ${procAnim.visible ? "anim-visible" : ""}`}>
+          <div ref={procAnim.ref} className={`proceso-header anim-fade-up-3d ${procAnim.visible ? "anim-visible-3d" : ""}`}>
             <span className="section-eyebrow">Simple y rápido</span>
             <h2 className="section-title">¿CÓMO <span className="title-red">FUNCIONA?</span></h2>
             <p className="proceso-subtitle">De tu pedido a tu obra en 4 pasos.</p>
@@ -83,7 +88,7 @@ export default function Services() {
           </div>
 
           <div className="proceso-cta">
-            <a href={waPresupuesto} target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <a ref={pedidoMagnetic} data-magnetic data-ripple-host onClick={ripple} href={waPresupuesto} target="_blank" rel="noopener noreferrer" className="btn-primary">
               {WA(18)} Hacer pedido ahora
             </a>
           </div>
@@ -93,7 +98,7 @@ export default function Services() {
       {/* ── ENVÍOS: ZONAS Y MAPA ── */}
       <section className="envios-section">
         <div className="container">
-          <div ref={envAnim.ref} className={`envios-header anim-fade-up ${envAnim.visible ? "anim-visible" : ""}`}>
+          <div ref={envAnim.ref} className={`envios-header anim-fade-up-3d ${envAnim.visible ? "anim-visible-3d" : ""}`}>
             <span className="section-eyebrow">Cobertura de envíos</span>
             <h2 className="section-title">ZONAS DE <span className="title-red">ENTREGA</span></h2>
           </div>
@@ -135,6 +140,10 @@ export default function Services() {
               </div>
 
               <a
+                ref={zonaMagnetic}
+                data-magnetic
+                data-ripple-host
+                onClick={ripple}
                 href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent('Hola! Quiero consultar si hacen envíos a mi zona.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -201,7 +210,7 @@ export default function Services() {
             <h3 className="presupuesto-title">¿NECESITÁS UN PRESUPUESTO?</h3>
             <p className="presupuesto-sub">Envianos la lista y te respondemos al instante con el mejor precio.</p>
           </div>
-          <a href={waPresupuesto} target="_blank" rel="noopener noreferrer" className="presupuesto-btn">
+          <a ref={presupuestoMagnetic} data-magnetic data-ripple-host onClick={ripple} href={waPresupuesto} target="_blank" rel="noopener noreferrer" className="presupuesto-btn">
             {WA(22)} Pedir presupuesto ahora
           </a>
         </div>
