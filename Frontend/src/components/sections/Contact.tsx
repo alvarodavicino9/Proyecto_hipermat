@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { contactInfo } from '../../data';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { useMagnetic, useRipple } from '../../hooks/useInteractions';
+import SmartImage from '../ui/SmartImage';
 import './Contact.css';
 
 const WA_SVG = (size = 20) => (
@@ -18,7 +19,6 @@ export default function Contact() {
   const info   = useScrollAnimation();
   const waMagnetic = useMagnetic<HTMLAnchorElement>();
   const igMagnetic = useMagnetic<HTMLAnchorElement>();
-  const catMagnetic = useMagnetic<HTMLAnchorElement>();
   const ripple = useRipple();
 
   const [fields, setFields] = useState({ nombre: '', telefono: '', mensaje: '' });
@@ -57,10 +57,10 @@ export default function Contact() {
           className={`contact-gallery anim-fade-up-3d ${gallery.visible ? 'anim-visible-3d' : ''}`}
         >
           <div className="contact-gallery-photo contact-gallery-photo--left">
-            <img src="/images/foto3.jpg" alt="Servicio de descarga Hipermat" />
+            <SmartImage src="/images/foto3.jpg" alt="Servicio de descarga Hipermat" width={740} height={1024} />
           </div>
           <div className="contact-gallery-photo contact-gallery-photo--right">
-            <img src="/images/foto4.jpg" alt="Local Hipermat en Rosario" />
+            <SmartImage src="/images/foto4.jpg" alt="Local Hipermat en Rosario" width={752} height={1024} />
           </div>
         </div>
 
@@ -128,9 +128,6 @@ export default function Contact() {
               </a>
               <a ref={igMagnetic} data-magnetic href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" className="quick-link quick-link--ig">
                 <Instagram size={16} /> Instagram
-              </a>
-              <a ref={catMagnetic} data-magnetic href="https://wa.me/c/5493414680227" target="_blank" rel="noopener noreferrer" className="quick-link quick-link--cat">
-                📦 Ver catálogo
               </a>
             </div>
           </div>

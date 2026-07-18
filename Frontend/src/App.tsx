@@ -24,7 +24,7 @@ function AppContent() {
       <main>
         <Routes>
           <Route path="/"          element={<HomePage />} />
-          {/* Catálogo temporalmente deshabilitado hasta tener el listado completo de productos reales */}
+          {/* Redirect de /catalogo por si quedaron links viejos indexados; se recreará cuando haya productos reales */}
           <Route path="/catalogo"  element={<Navigate to="/" replace />} />
           <Route path="/servicios" element={<ServicesPage />} />
           <Route path="/nosotros"  element={<AboutPage />} />

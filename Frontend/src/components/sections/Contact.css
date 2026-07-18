@@ -28,8 +28,9 @@
 .contact-gallery-photo img {
   display: block;
   width: 100%;
-  height: 200px;
+  height: 260px;
   object-fit: cover;
+  object-position: center 30%;
 }
 .contact-gallery-photo--left:hover {
   transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(-5px);
@@ -158,8 +159,6 @@
 .quick-link--wa:hover  { background: #25d366; color: var(--white); }
 .quick-link--ig  { color: #cc2366; }
 .quick-link--ig:hover  { background: #cc2366; color: var(--white); }
-.quick-link--cat { color: var(--blue); }
-.quick-link--cat:hover { background: var(--blue); color: var(--white); }
 
 /* ── INFO + MAP ────────────────────────────────── */
 .contact-info-wrap { display: flex; flex-direction: column; gap: 20px; }
@@ -251,7 +250,7 @@
 @media (max-width: 600px) {
   .contact-gallery { grid-template-columns: 1fr; margin-bottom: 32px; }
   .contact-gallery-photo { transform: none !important; }
-  .contact-gallery-photo img { height: 160px; }
+  .contact-gallery-photo img { height: 200px; object-position: center 30%; }
 }
 @media (max-width: 480px) {
   .quick-link span { display: none; }

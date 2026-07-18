@@ -1,7 +1,8 @@
-import { CheckCircle, Instagram } from 'lucide-react';
+import { CheckCircle, Instagram, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { contactInfo } from '../../data';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { useMagnetic } from '../../hooks/useInteractions';
+import SmartImage from '../ui/SmartImage';
 import './About.css';
 
 const values = [
@@ -53,10 +54,12 @@ export default function About() {
 
           {/* Foto real del depósito con tilt 3D sutil */}
           <div className="about-photo-wrap">
-            <img
+            <SmartImage
               src="/images/foto2.jpg"
               alt="Depósito Hipermat en Rosario"
               className="about-photo"
+              width={757}
+              height={1024}
             />
           </div>
 
@@ -80,7 +83,7 @@ export default function About() {
           className={`about-cards anim-fade-right-3d ${right.visible ? 'anim-visible-3d' : ''}`}
         >
           <div className="about-card about-card--blue about-card--tilt">
-            <div className="about-card-icon">📍</div>
+            <div className="about-card-icon about-card-icon--blue"><MapPin size={22} /></div>
             <div>
               <h4 className="about-card-title">Ubicación</h4>
               <p className="about-card-text">Juan José Paso 6082</p>
@@ -97,7 +100,7 @@ export default function About() {
           </div>
 
           <div className="about-card about-card--red about-card--tilt">
-            <div className="about-card-icon">🕐</div>
+            <div className="about-card-icon about-card-icon--red"><Clock size={22} /></div>
             <div>
               <h4 className="about-card-title">Horarios</h4>
               <p className="about-card-text">{contactInfo.hours.weekdays}</p>
@@ -106,8 +109,8 @@ export default function About() {
             </div>
           </div>
 
-          <div className="about-card about-card--dark about-card--tilt">
-            <div className="about-card-icon">💬</div>
+          <div className="about-card about-card--wa about-card--tilt">
+            <div className="about-card-icon about-card-icon--wa"><MessageCircle size={22} /></div>
             <div>
               <h4 className="about-card-title">WhatsApp</h4>
               <p className="about-card-text">+54 9 341 468-0227</p>

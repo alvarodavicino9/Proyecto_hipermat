@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
-import { ArrowRight, Truck, Star, Shield, Package } from 'lucide-react';
+import { ArrowRight, Truck, Star, Shield, Package, Building2, MessageCircle, DollarSign } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { contactInfo } from '../../data';
 import { useMagnetic, useRipple, useTiltSection } from '../../hooks/useInteractions';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import SmartImage from '../ui/SmartImage';
 
 import './Hero.css';
 
@@ -24,9 +25,16 @@ export default function Hero() {
   const textRef = useRef<HTMLDivElement>(null);
   const empresaAnim = useScrollAnimation();
 
-  // Parallax on scroll: fondo se desplaza, texto se desvanece
+  // Parallax on scroll: fondo se desplaza, texto se desvanece (solo en desktop:
+  // en mobile este efecto generaba un "fantasma" al superponerse con la sección siguiente)
   useEffect(() => {
     const onScroll = () => {
+      const isMobile = window.innerWidth <= 900;
+      if (isMobile) {
+        if (bgRef.current) bgRef.current.style.transform = '';
+        if (textRef.current) { textRef.current.style.opacity = ''; textRef.current.style.transform = ''; }
+        return;
+      }
       const y = window.scrollY;
       if (bgRef.current) {
         bgRef.current.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
@@ -38,8 +46,12 @@ export default function Hero() {
       }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
   }, []);
 
   return (
@@ -95,25 +107,20 @@ export default function Hero() {
           {/* Fotos: cartel + camión, y depósito — tarjetas con tilt 3D por mouse */}
           <div className="hero-visual">
             <div className="hero-main-photo-wrap" data-tilt="1">
-              <img
+              <SmartImage
                 src="/images/foto1.jpg"
                 alt="Hipermat - camión y cartel en Rosario"
                 className="hero-main-photo"
+                width={1024}
+                height={768}
+                priority
               />
               <div className="hero-photo-badge">
                 <span>+40 años en el rubro</span>
               </div>
             </div>
 
-            <div className="hero-secondary-photo-wrap" data-tilt="1">
-              <img
-                src="/images/foto2.jpg"
-                alt="Depósito Hipermat en Rosario"
-                className="hero-secondary-photo"
-              />
-            </div>
-
-            {/* Stats debajo de las fotos */}
+            {/* Stats debajo de la foto */}
             <div className="hero-stats-row" data-tilt="1">
               <div className="hero-stat-item">
                 <span className="hero-stat-num">+500</span>
@@ -153,19 +160,19 @@ export default function Hero() {
 
           <div className="empresa-gallery-2x2">
             <div className="empresa-photo">
-              <img src="/images/foto1.jpg" alt="Flota de camiones Hipermat" />
+              <SmartImage src="/images/foto1.jpg" alt="Flota de camiones Hipermat" width={1024} height={768} />
               <div className="empresa-photo-overlay"><span>Flota propia de camiones</span></div>
             </div>
             <div className="empresa-photo">
-              <img src="/images/foto2.jpg" alt="Depósito Hipermat" />
+              <SmartImage src="/images/foto2.jpg" alt="Depósito Hipermat" width={757} height={1024} />
               <div className="empresa-photo-overlay"><span>Amplio depósito en Rosario</span></div>
             </div>
             <div className="empresa-photo">
-              <img src="/images/foto3.jpg" alt="Servicio de descarga" />
+              <SmartImage src="/images/foto3.jpg" alt="Servicio de descarga" width={740} height={1024} />
               <div className="empresa-photo-overlay"><span>Servicio de descarga incluido</span></div>
             </div>
             <div className="empresa-photo">
-              <img src="/images/foto4.jpg" alt="Venta mayorista y minorista" />
+              <SmartImage src="/images/foto4.jpg" alt="Venta mayorista y minorista" width={752} height={1024} />
               <div className="empresa-photo-overlay"><span>Mayoristas y minoristas</span></div>
             </div>
           </div>
@@ -173,13 +180,13 @@ export default function Hero() {
           {/* Valores */}
           <div className="empresa-valores">
             {[
-              { icon: '🏗️', title: 'Todo en un lugar', desc: 'Cementos, ladrillos, adhesivos, griferías y más de 500 productos disponibles.' },
-              { icon: '🚛', title: 'Envíos con hidrogrúa', desc: 'Flota propia de camiones con descarga incluida a toda Rosario y zona.' },
-              { icon: '💬', title: 'Asesoramiento real', desc: 'Empleados con experiencia en el rubro te ayudan a elegir el material correcto.' },
-              { icon: '💰', title: 'Mejor precio', desc: 'Precios competitivos, mayorista y minorista. Pedí tu cotización sin compromiso.' },
+              { icon: <Building2 size={24} />, title: 'Todo en un lugar', desc: 'Cementos, ladrillos, adhesivos, griferías y más de 500 productos disponibles.', color: 'blue' },
+              { icon: <Truck size={24} />, title: 'Envíos con hidrogrúa', desc: 'Flota propia de camiones con descarga incluida a toda Rosario y zona.', color: 'red' },
+              { icon: <MessageCircle size={24} />, title: 'Asesoramiento real', desc: 'Empleados con experiencia en el rubro te ayudan a elegir el material correcto.', color: 'blue' },
+              { icon: <DollarSign size={24} />, title: 'Mejor precio', desc: 'Precios competitivos, mayorista y minorista. Pedí tu cotización sin compromiso.', color: 'red' },
             ].map((v, i) => (
-              <div key={i} className="empresa-valor">
-                <span className="empresa-valor-icon">{v.icon}</span>
+              <div key={i} className={`empresa-valor empresa-valor--${v.color}`}>
+                <div className={`empresa-valor-icon empresa-valor-icon--${v.color}`}>{v.icon}</div>
                 <h4 className="empresa-valor-title">{v.title}</h4>
                 <p className="empresa-valor-desc">{v.desc}</p>
               </div>

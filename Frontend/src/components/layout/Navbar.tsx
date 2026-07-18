@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Instagram, Home, Wrench, Building2, Mail } from 'lucide-react';
+import { Menu, X, Phone, Instagram, Home, Wrench, Building2, Mail, MapPin, Clock } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { contactInfo } from '../../data';
 import { useMagnetic, useRipple, useDockMagnify } from '../../hooks/useInteractions';
@@ -45,8 +45,8 @@ export default function Navbar() {
       <div className="topbar">
         <div className="container topbar-inner">
           <span className="topbar-item"><Phone size={13} />+54 9 341 468-0227</span>
-          <span className="topbar-item">📍 Juan José Paso 6082, Rosario</span>
-          <span className="topbar-item">🕐 Lun–Vie 8–16 | Sáb 8–12</span>
+          <span className="topbar-item"><MapPin size={13} />Juan José Paso 6082, Rosario</span>
+          <span className="topbar-item"><Clock size={13} />Lun–Vie 8–16 | Sáb 8–12</span>
           <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" className="topbar-item topbar-link">
             <Instagram size={13} />@hipermat_rosario
           </a>

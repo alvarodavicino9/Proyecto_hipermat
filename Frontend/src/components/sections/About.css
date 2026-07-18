@@ -114,6 +114,7 @@
   padding: 24px;
   border-radius: var(--radius-lg);
   border: 2px solid transparent;
+  box-shadow: var(--shadow);
 }
 
 .about-card--tilt {
@@ -126,7 +127,7 @@
 }
 .about-card--blue.about-card--tilt:hover { box-shadow: 0 26px 44px -26px rgba(15,48,112,0.35); }
 .about-card--red.about-card--tilt:hover { box-shadow: 0 26px 44px -26px rgba(168,31,31,0.3); }
-.about-card--dark.about-card--tilt:hover { box-shadow: 0 26px 44px -26px rgba(0,0,0,0.4); }
+.about-card--wa.about-card--tilt:hover { box-shadow: 0 26px 44px -26px rgba(19,120,72,0.4); }
 
 .about-card--blue {
   background: #e8f0ff;
@@ -138,27 +139,38 @@
   border-color: rgba(212,42,42,0.2);
 }
 
-.about-card--dark {
-  background: var(--blue-dark);
-  border-color: var(--blue-dark);
+.about-card--wa {
+  background: linear-gradient(135deg, #16a34a 0%, #0d8a3f 100%);
+  border-color: #0d8a3f;
 }
 
-.about-card--dark .about-card-title {
+.about-card--wa .about-card-title {
   color: var(--white);
 }
 
-.about-card--dark .about-card-text {
-  color: rgba(255,255,255,0.75);
+.about-card--wa .about-card-text {
+  color: rgba(255,255,255,0.85);
 }
 
-.about-card--dark .about-card-link {
-  color: rgba(255,255,255,0.9);
+.about-card--wa .about-card-link {
+  color: var(--white);
+  font-weight: 700;
 }
+.about-card--wa .about-card-link:hover { color: rgba(255,255,255,0.8); }
 
 .about-card-icon {
-  font-size: 1.8rem;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
+
+.about-card-icon--blue { background: rgba(26,79,160,0.12); color: var(--blue); }
+.about-card-icon--red  { background: rgba(212,42,42,0.12); color: var(--red); }
+.about-card-icon--wa   { background: rgba(255,255,255,0.18); color: var(--white); }
 
 .about-card-title {
   font-family: var(--font-display);

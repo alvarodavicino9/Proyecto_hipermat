@@ -20,7 +20,7 @@ const services = [
 ];
 
 const pasos = [
-  { num: '01', title: 'Hacé tu pedido', desc: 'Agregá productos al carrito desde el catálogo o escribinos por WhatsApp con tu lista de materiales.' },
+  { num: '01', title: 'Hacé tu pedido', desc: 'Escribinos por WhatsApp con tu lista de materiales o contanos qué necesitás para tu obra.' },
   { num: '02', title: 'Te cotizamos', desc: 'Te respondemos con precio y disponibilidad en el menor tiempo posible.' },
   { num: '03', title: 'Confirmás', desc: 'Confirmás el pedido y coordinamos el día y horario de entrega que más te convenga.' },
   { num: '04', title: 'Entregamos', desc: 'Nuestro camión llega a tu obra con hidrogrúa para la descarga. Rápido y sin complicaciones.' },
