@@ -1,4 +1,5 @@
-import { ImgHTMLAttributes } from 'react';
+import { ImgHTMLAttributes, useState } from 'react';
+import './SmartImage.css';
 
 interface SmartImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'> {
   /** Ruta del jpg, ej: "/images/foto1.jpg". Se busca el .webp con el mismo nombre. */
@@ -10,8 +11,10 @@ interface SmartImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src
 }
 
 /**
- * <picture> con fuente WebP + fallback JPG, dimensiones fijas (evita CLS)
- * y lazy loading automático salvo que sea la imagen prioritaria (LCP).
+ * <picture> con fuente WebP + fallback JPG, dimensiones fijas (evita CLS),
+ * lazy loading automático salvo que sea la imagen prioritaria (LCP),
+ * y un shimmer de carga mientras la imagen todavía no llegó (útil con
+ * conexiones lentas en el celular).
  */
 export default function SmartImage({
   src,
@@ -22,6 +25,7 @@ export default function SmartImage({
   className,
   ...rest
 }: SmartImageProps) {
+  const [loaded, setLoaded] = useState(false);
   const webpSrc = src.replace(/\.jpg$/i, '.webp');
 
   return (
@@ -35,7 +39,8 @@ export default function SmartImage({
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
         decoding={priority ? 'sync' : 'async'}
-        className={className}
+        onLoad={() => setLoaded(true)}
+        className={`smart-img ${loaded ? 'smart-img--loaded' : ''} ${className ?? ''}`}
         {...rest}
       />
     </picture>

@@ -390,6 +390,11 @@
   .hero-stats-row { padding: 12px 14px; }
   .hero-main-photo-wrap, .hero-stats-row { transform: none !important; }
 
+  /* Los decos flotantes (cuadrado, pill, orbes) están pensados para el layout
+     de 2 columnas del desktop; en mobile el layout se apila y quedan flotando
+     encima de la foto, así que se ocultan */
+  .hero-deco, .hero-orb { display: none; }
+
   .empresa-gallery-2x2 {
     grid-template-columns: 1fr;
     height: auto;

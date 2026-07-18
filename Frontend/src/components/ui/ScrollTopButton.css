@@ -1,0 +1,31 @@
+.scroll-top-btn {
+  display: none;
+  position: fixed;
+  left: 20px;
+  bottom: 84px;
+  z-index: 400;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--blue-dark);
+  color: var(--white);
+  border: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  cursor: pointer;
+  animation: scrollTopIn 0.25s ease;
+}
+.scroll-top-btn:active { transform: scale(0.92); }
+
+@keyframes scrollTopIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .scroll-top-btn {
+    display: flex;
+    bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+}

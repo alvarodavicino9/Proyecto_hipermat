@@ -52,54 +52,12 @@
   50%       { opacity: 0.7; transform: scale(1.2); }
 }
 
-/* Bubble tooltip */
-.wa-bubble {
-  position: fixed;
-  bottom: 100px;
-  right: 28px;
-  z-index: 997;
-  background: white;
-  border-radius: 16px 16px 4px 16px;
-  padding: 14px 18px 14px 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  max-width: 220px;
-  cursor: pointer;
-  animation: bubbleIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
-  border: 1px solid var(--gray-200);
-}
-
+/* Panel */
 @keyframes bubbleIn {
   from { opacity: 0; transform: scale(0.7) translateY(20px); }
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-.wa-bubble-close {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  background: var(--gray-200);
-  border: none;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--gray-600);
-  transition: background var(--transition);
-}
-.wa-bubble-close:hover { background: var(--gray-400); }
-
-.wa-bubble-text {
-  font-size: 0.85rem;
-  color: var(--text);
-  line-height: 1.5;
-  margin-right: 10px;
-}
-.wa-bubble-text strong { color: #25d366; }
-
-/* Panel */
 .wa-panel {
   position: fixed;
   bottom: 100px;
@@ -221,10 +179,9 @@
 /* Mobile */
 @media (max-width: 900px) {
   .wa-float-btn { bottom: 92px; }
-  .wa-bubble, .wa-panel { bottom: 164px; }
+  .wa-panel { bottom: 164px; }
 }
 @media (max-width: 480px) {
   .wa-float-btn { bottom: 84px; right: 20px; width: 54px; height: 54px; }
   .wa-panel { right: 12px; width: calc(100vw - 24px); bottom: 154px; }
-  .wa-bubble { right: 12px; bottom: 154px; }
 }

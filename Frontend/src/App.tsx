@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import WhatsAppFloat from './components/ui/WhatsAppFloat';
+import ScrollTopButton from './components/ui/ScrollTopButton';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
@@ -34,6 +35,7 @@ function AppContent() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <ScrollTopButton />
     </>
   );
 }

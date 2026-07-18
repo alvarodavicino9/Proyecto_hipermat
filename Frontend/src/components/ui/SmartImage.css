@@ -1,0 +1,14 @@
+.smart-img {
+  background: linear-gradient(90deg, #e8e8e8 25%, #f2f2f2 37%, #e8e8e8 63%);
+  background-size: 400% 100%;
+  animation: smartImgShimmer 1.4s ease infinite;
+}
+.smart-img--loaded {
+  animation: none;
+  background: none;
+}
+
+@keyframes smartImgShimmer {
+  0%   { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}

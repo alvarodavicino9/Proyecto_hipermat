@@ -17,15 +17,12 @@ const mensajes = [
 
 export default function WhatsAppFloat() {
   const [open, setOpen] = useState(false);
-  const [shown, setShown] = useState(false);
   const [pulse, setPulse] = useState(false);
 
-  // Show bubble after 4 seconds
+  // Pulse every 8 seconds
   useEffect(() => {
-    const t1 = setTimeout(() => setShown(true), 4000);
-    // Pulse every 8 seconds
-    const t2 = setInterval(() => setPulse(p => !p), 8000);
-    return () => { clearTimeout(t1); clearInterval(t2); };
+    const t = setInterval(() => setPulse(p => !p), 8000);
+    return () => clearInterval(t);
   }, []);
 
   const waLink = (msg: string) =>
@@ -33,19 +30,6 @@ export default function WhatsAppFloat() {
 
   return (
     <>
-      {/* Tooltip bubble */}
-      {shown && !open && (
-        <div className="wa-bubble" onClick={() => setOpen(true)}>
-          <button
-            className="wa-bubble-close"
-            onClick={e => { e.stopPropagation(); setShown(false); }}
-          >
-            <X size={12} />
-          </button>
-          <p className="wa-bubble-text">💬 ¿Necesitás ayuda?<br /><strong>Chateá con nosotros</strong></p>
-        </div>
-      )}
-
       {/* Quick message panel */}
       {open && (
         <div className="wa-panel">
@@ -91,7 +75,7 @@ export default function WhatsAppFloat() {
       {/* Main button */}
       <button
         className={`wa-float-btn ${pulse ? 'wa-float-btn--pulse' : ''}`}
-        onClick={() => { setOpen(o => !o); setShown(false); }}
+        onClick={() => setOpen(o => !o)}
         aria-label="Contactar por WhatsApp"
       >
         {open ? <X size={26} /> : WA_SVG}

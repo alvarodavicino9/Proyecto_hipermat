@@ -172,66 +172,6 @@
   border: 2px solid var(--blue);
 }
 
-.navbar-burger {
-  display: none;
-  color: var(--white);
-  background: rgba(255,255,255,0.1);
-  border: none;
-  border-radius: var(--radius);
-  padding: 7px;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--transition);
-}
-.navbar-burger:hover { background: rgba(255,255,255,0.2); }
-
-/* Mobile menu */
-.mobile-menu {
-  background: var(--blue-dark);
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding: 8px 16px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  animation: fadeIn 0.18s ease;
-}
-.mobile-link {
-  color: rgba(255,255,255,0.82);
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 12px 14px;
-  text-align: left;
-  border: none;
-  background: none;
-  cursor: pointer;
-  border-radius: var(--radius);
-  transition: background var(--transition), color var(--transition);
-  width: 100%;
-}
-.mobile-link:hover, .mobile-link--active {
-  background: rgba(255,255,255,0.1);
-  color: var(--white);
-}
-.mobile-whatsapp {
-  margin-top: 10px;
-  background: #25d366;
-  color: var(--white);
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 13px;
-  border-radius: var(--radius);
-  transition: background var(--transition);
-  display: block;
-}
-.mobile-whatsapp:hover { background: #1db954; }
-
 /* Dock inferior fijo (mobile) */
 .mobile-dock {
   display: none;
@@ -273,7 +213,6 @@
 @media (max-width: 900px) {
   .navbar-dock { display: none; }
   .navbar-whatsapp { display: none; }
-  .navbar-burger { display: flex; }
 
   /* Barra de secciones fija abajo, reemplaza al dock desktop en mobile */
   .mobile-dock { display: flex; }
