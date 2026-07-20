@@ -6,7 +6,7 @@ const values = [
   'Atención personalizada en cada pedido',
   'Empleados capacitados con experiencia en el rubro',
   'Los mejores precios de Rosario garantizados',
-  'Venta por mayor y menor sin mínimo',
+  'Venta por mayor y menor',
   'Envíos y descargas a toda la zona',
   'Asesoramiento profesional sin compromiso',
 ];
@@ -23,7 +23,7 @@ export default function About() {
             <span className="about-tagline-text">OTRO TRATO.</span>
           </h2>
           <p className="about-desc">
-            Somos un corralón y ferretería de materiales de construcción ubicado en Rosario,
+            Somos un corralón de materiales de construcción ubicado en Rosario,
             Santa Fe. Nos especializamos en la venta de materiales por mayor y menor,
             atendiendo tanto a clientes particulares como a empresas constructoras.
           </p>

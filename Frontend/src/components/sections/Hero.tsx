@@ -86,7 +86,6 @@ export default function Hero() {
             </h1>
             <p className="hero-slogan">"Proveemos tu obra, desde el primer ladrillo"</p>
             <p className="hero-desc">
-              Cementos, ladrillos, griferías, adhesivos y más de 500 productos.
               Atención personalizada y los mejores precios garantizados.
             </p>
             <div className="hero-ctas">
@@ -98,9 +97,9 @@ export default function Hero() {
               </a>
             </div>
             <div className="hero-features">
-              <div className="hero-feature"><Truck size={18} /><span>Envíos y descargas a Rosario</span></div>
+              <div className="hero-feature"><Truck size={18} /><span>Envíos y descargas a Rosario, Funes y alrededores</span></div>
               <div className="hero-feature"><Shield size={18} /><span>Garantía en todos los productos</span></div>
-              <div className="hero-feature"><Package size={18} /><span>Mayorista y minorista sin mínimo</span></div>
+              <div className="hero-feature"><Package size={18} /><span>Mayorista y minorista</span></div>
             </div>
           </div>
 
@@ -169,7 +168,7 @@ export default function Hero() {
             </div>
             <div className="empresa-photo">
               <SmartImage src="/images/foto3.jpg" alt="Servicio de descarga" width={740} height={1024} />
-              <div className="empresa-photo-overlay"><span>Servicio de descarga incluido</span></div>
+              <div className="empresa-photo-overlay"><span>Servicio de descarga con hidrogrúa</span></div>
             </div>
             <div className="empresa-photo">
               <SmartImage src="/images/foto4.jpg" alt="Venta mayorista y minorista" width={752} height={1024} />
@@ -181,7 +180,7 @@ export default function Hero() {
           <div className="empresa-valores">
             {[
               { icon: <Building2 size={24} />, title: 'Todo en un lugar', desc: 'Cementos, ladrillos, adhesivos, griferías y más de 500 productos disponibles.', color: 'blue' },
-              { icon: <Truck size={24} />, title: 'Envíos con hidrogrúa', desc: 'Flota propia de camiones con descarga incluida a toda Rosario y zona.', color: 'red' },
+              { icon: <Truck size={24} />, title: 'Envíos con hidrogrúa', desc: 'Flota propia de camiones con hidrogrúa.', color: 'red' },
               { icon: <MessageCircle size={24} />, title: 'Asesoramiento real', desc: 'Empleados con experiencia en el rubro te ayudan a elegir el material correcto.', color: 'blue' },
               { icon: <DollarSign size={24} />, title: 'Mejor precio', desc: 'Precios competitivos, mayorista y minorista. Pedí tu cotización sin compromiso.', color: 'red' },
             ].map((v, i) => (

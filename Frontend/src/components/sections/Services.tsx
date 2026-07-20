@@ -11,11 +11,11 @@ const WA = (size = 20) => (
 );
 
 const services = [
-  { icon: <Truck size={30} />, title: 'Envíos y Descargas', desc: 'Flota propia de camiones con hidrogrúa. Entrega y descarga del material incluida en toda Rosario y zona.', color: 'blue' },
+  { icon: <Truck size={30} />, title: 'Envíos y Descargas', desc: 'Flota propia de camiones con hidrogrúa. Entrega y descarga del material en toda Rosario y zona.', color: 'blue' },
   { icon: <MessageCircle size={30} />, title: 'Asesoramiento', desc: 'Consultá por WhatsApp sin compromiso. Nuestros empleados con experiencia te guían en la elección correcta.', color: 'red' },
   { icon: <DollarSign size={30} />, title: 'Cotizaciones', desc: 'Te hacemos el presupuesto de tu obra al instante. Mejoramos cualquier presupuesto.', color: 'blue' },
   { icon: <Users size={30} />, title: 'Atención personalizada', desc: 'Cada pedido es atendido individualmente. No sos un número, sos un cliente.', color: 'red' },
-  { icon: <Package size={30} />, title: 'Mayorista y minorista', desc: 'Desde una bolsa de cemento hasta proyectos completos. Sin pedido mínimo.', color: 'blue' },
+  { icon: <Package size={30} />, title: 'Mayorista y minorista', desc: 'Desde una bolsa de cemento hasta proyectos completos.', color: 'blue' },
   { icon: <Shield size={30} />, title: 'Calidad garantizada', desc: 'Solo trabajamos con marcas líderes del mercado con garantía de fábrica.', color: 'red' },
 ];
 
@@ -129,8 +129,7 @@ export default function Services() {
                 <h4 className="condiciones-title">Condiciones de envío</h4>
                 {[
                   'El costo de envío se informa al confirmar el pedido según zona y volumen',
-                  'Para pedidos grandes el envío puede ser sin cargo — consultá',
-                  'Coordinamos horario de entrega a tu conveniencia',
+                  'Coordinamos el envío hablando por WhatsApp o teléfono',
                 ].map((c, i) => (
                   <div key={i} className="condicion-item">
                     <CheckCircle size={15} className="condicion-check" />

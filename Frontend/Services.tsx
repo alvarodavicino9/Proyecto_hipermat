@@ -6,7 +6,7 @@ const services = [
   {
     icon: <Truck size={32} />,
     title: 'Envíos y Descargas',
-    desc: 'Realizamos envíos a toda Rosario y zona. Servicio de descarga de material incluido. Coordinamos el horario que más te convenga.',
+    desc: 'Realizamos envíos a toda Rosario y zona. Servicio de descarga de material',
     color: 'blue',
   },
   {
@@ -51,7 +51,7 @@ export default function Services() {
             NUESTROS <span className="title-red">SERVICIOS</span>
           </h2>
           <p className="services-subtitle">
-            Más que una ferretería — somos tu socio en la construcción.
+            Más que un corralón — somos tu socio en la construcción.
           </p>
         </div>
 

@@ -7,7 +7,7 @@ export default function HomePage() {
     <>
       <SEO
         title="Materiales de Construcción en Rosario"
-        description="Hipermat Rosario — Corralón y ferretería. Cementos, ladrillos, griferías y más de 500 productos. Venta mayorista y minorista. Envíos con hidrogrúa. El mejor precio garantizado."
+        description="Hipermat Rosario — Corralón de materiales de construcción. Cementos, ladrillos, griferías y más de 500 productos. Venta mayorista y minorista. Envíos con hidrogrúa. El mejor precio garantizado."
         path="/"
       />
       <Hero />

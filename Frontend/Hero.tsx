@@ -35,7 +35,7 @@ export default function Hero({ onCatalogClick }: HeroProps) {
           </h1>
 
           <p className="hero-desc">
-            Más de años de experiencia en el rubro. Atención personalizada,
+            Más de 40 años de experiencia en el rubro. Atención personalizada,
             asesoramiento profesional y los mejores precios de Rosario.
             Envíos y descarga incluidos.
           </p>
