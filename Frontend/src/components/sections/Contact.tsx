@@ -57,7 +57,7 @@ export default function Contact() {
           className={`contact-gallery anim-fade-up-3d ${gallery.visible ? 'anim-visible-3d' : ''}`}
         >
           <div className="contact-gallery-photo contact-gallery-photo--left">
-            <SmartImage src="/images/foto3.jpg" alt="Servicio de descarga Hipermat" width={740} height={1024} />
+            <SmartImage src="/images/foto6.jpg" alt="Depósito Hipermat - stock de cemento" width={742} height={1024} />
           </div>
           <div className="contact-gallery-photo contact-gallery-photo--right">
             <SmartImage src="/images/foto4.jpg" alt="Local Hipermat en Rosario" width={752} height={1024} />

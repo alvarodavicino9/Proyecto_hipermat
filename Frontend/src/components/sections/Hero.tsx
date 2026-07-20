@@ -108,11 +108,11 @@ export default function Hero() {
           <div className="hero-visual">
             <div className="hero-main-photo-wrap" data-tilt="1">
               <SmartImage
-                src="/images/foto1.jpg"
-                alt="Hipermat - camión y cartel en Rosario"
+                src="/images/foto5.jpg"
+                alt="Camión Hipermat cargado con ladrillos frente al depósito"
                 className="hero-main-photo"
-                width={1024}
-                height={768}
+                width={600}
+                height={1024}
                 priority
               />
               <div className="hero-photo-badge">

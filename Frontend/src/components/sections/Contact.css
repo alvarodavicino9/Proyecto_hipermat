@@ -28,10 +28,11 @@
 .contact-gallery-photo img {
   display: block;
   width: 100%;
-  height: 260px;
+  height: 400px;
   object-fit: cover;
-  object-position: center 30%;
 }
+.contact-gallery-photo--left img { object-position: 15% 30%; }
+.contact-gallery-photo--right img { object-position: center 20%; }
 .contact-gallery-photo--left:hover {
   transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(-5px);
   box-shadow: 0 34px 54px -20px rgba(15,48,112,0.4);
@@ -250,7 +251,7 @@
 @media (max-width: 600px) {
   .contact-gallery { grid-template-columns: 1fr; margin-bottom: 32px; }
   .contact-gallery-photo { transform: none !important; }
-  .contact-gallery-photo img { height: 200px; object-position: center 30%; }
+  .contact-gallery-photo img { height: 300px; }
 }
 @media (max-width: 480px) {
   .quick-link span { display: none; }
