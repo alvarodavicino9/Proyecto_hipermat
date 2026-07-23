@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { contactInfo } from '../../data';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { useMagnetic, useRipple } from '../../hooks/useInteractions';
-import SmartImage from '../ui/SmartImage';
 import './Contact.css';
 
 const WA_SVG = (size = 20) => (
@@ -14,7 +13,6 @@ const WA_SVG = (size = 20) => (
 
 export default function Contact() {
   const header = useScrollAnimation();
-  const gallery = useScrollAnimation();
   const form   = useScrollAnimation();
   const info   = useScrollAnimation();
   const waMagnetic = useMagnetic<HTMLAnchorElement>();
@@ -49,19 +47,6 @@ export default function Contact() {
           <p className="contact-subtitle">
             Escribinos, visitanos o mandanos tu consulta. Respondemos al instante.
           </p>
-        </div>
-
-        {/* Galería de fotos reales con tilt 3D opuesto */}
-        <div
-          ref={gallery.ref}
-          className={`contact-gallery anim-fade-up-3d ${gallery.visible ? 'anim-visible-3d' : ''}`}
-        >
-          <div className="contact-gallery-photo contact-gallery-photo--left">
-            <SmartImage src="/images/foto6.jpg" alt="Depósito Hipermat - stock de cemento" width={742} height={1024} />
-          </div>
-          <div className="contact-gallery-photo contact-gallery-photo--right">
-            <SmartImage src="/images/foto4.jpg" alt="Local Hipermat en Rosario" width={752} height={1024} />
-          </div>
         </div>
 
         <div className="contact-grid">
