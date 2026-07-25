@@ -1,5 +1,5 @@
-import { Instagram, MapPin, Clock, Phone, Heart } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Instagram, MapPin, Clock, Phone } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { contactInfo } from '../../data';
 import { useMagnetic, useRipple } from '../../hooks/useInteractions';
 import './Footer.css';
@@ -19,9 +19,18 @@ const navLinks = [
 
 export default function Footer() {
   const navigate = useNavigate();
+  const location = useLocation();
   const year = new Date().getFullYear();
   const waMagnetic = useMagnetic<HTMLAnchorElement>();
   const ripple = useRipple();
+
+  const handleContactClick = () => {
+    if (location.pathname === '/contacto') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/contacto');
+    }
+  };
 
   return (
     <footer className="footer">
@@ -45,7 +54,7 @@ export default function Footer() {
             >
               {WA_SVG} Pedir presupuesto
             </a>
-            <button className="footer-cta-btn footer-cta-btn--cat" onClick={() => navigate('/contacto')}>
+            <button className="footer-cta-btn footer-cta-btn--cat" onClick={handleContactClick}>
               Contactanos →
             </button>
           </div>
@@ -135,9 +144,6 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <p>© {year} Hipermat Rosario. Todos los derechos reservados.</p>
-          <p className="footer-credit">
-            Hecho con <Heart size={12} fill="currentColor" /> para Hipermat 🏗️
-          </p>
         </div>
       </div>
     </footer>

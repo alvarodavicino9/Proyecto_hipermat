@@ -185,20 +185,12 @@
 .footer-bottom-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 0.75rem;
   color: rgba(255,255,255,0.25);
   flex-wrap: wrap;
   gap: 8px;
 }
-
-.footer-credit {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: rgba(255,255,255,0.25);
-}
-.footer-credit svg { color: var(--red-light); }
 
 /* Responsive */
 @media (max-width: 1024px) {
