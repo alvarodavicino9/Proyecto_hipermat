@@ -6,7 +6,7 @@ interface SEOProps {
   path?: string;
 }
 
-const BASE_URL = 'https://hipermat.netlify.app';
+const BASE_URL = 'https://www.hipermatrosario.com.ar';
 
 export default function SEO({ title, description, path = '' }: SEOProps) {
   const fullTitle = `${title} | Hipermat Rosario`;
