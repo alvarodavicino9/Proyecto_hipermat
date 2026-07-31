@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowRight, Truck, Star, Shield, Package, Building2, MessageCircle, DollarSign } from 'lucide-react';
+import { ArrowRight, Truck, Star, Package, Building2, MessageCircle, DollarSign } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { contactInfo } from '../../data';
 import { useMagnetic, useRipple, useTiltSection } from '../../hooks/useInteractions';
@@ -82,7 +82,7 @@ export default function Hero() {
             <h1 className="hero-title">
               <span className="hero-title-main hero-title-anim1">HIPERMAT</span>
               <span className="hero-title-accent hero-title-anim2">MATERIALES DE CONSTRUCCIÓN</span>
-              <span className="hero-title-sub hero-title-anim3">Mayorista y minorista · Rosario</span>
+              <span className="hero-title-sub hero-title-anim3">Venta mayorista y minorista</span>
             </h1>
             <p className="hero-slogan">"Proveemos tu obra, desde el primer ladrillo"</p>
             <p className="hero-desc">
@@ -93,13 +93,12 @@ export default function Hero() {
                 Contactanos <ArrowRight size={18} />
               </button>
               <a ref={ctaMagnetic2} data-magnetic data-ripple-host onClick={ripple} href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hero-cta-wa">
-                {WA_ICON} Pedí cotización
+                {WA_ICON} Pedí tu cotización
               </a>
             </div>
             <div className="hero-features">
-              <div className="hero-feature"><Truck size={18} /><span>Envíos y descargas a Rosario, Funes y alrededores</span></div>
-              <div className="hero-feature"><Shield size={18} /><span>Garantía en todos los productos</span></div>
-              <div className="hero-feature"><Package size={18} /><span>Mayorista y minorista</span></div>
+              <div className="hero-feature"><Truck size={18} /><span>Envíos a Rosario y gran Rosario</span></div>
+              <div className="hero-feature"><Package size={18} /><span>Venta mayorista y minorista</span></div>
             </div>
           </div>
 
@@ -179,10 +178,10 @@ export default function Hero() {
           {/* Valores */}
           <div className="empresa-valores">
             {[
-              { icon: <Building2 size={24} />, title: 'Todo en un lugar', desc: 'Cementos, ladrillos, adhesivos, griferías y más de 500 productos disponibles.', color: 'blue' },
-              { icon: <Truck size={24} />, title: 'Envíos con hidrogrúa', desc: 'Flota propia de camiones con hidrogrúa.', color: 'red' },
-              { icon: <MessageCircle size={24} />, title: 'Asesoramiento real', desc: 'Empleados con experiencia en el rubro te ayudan a elegir el material correcto.', color: 'blue' },
-              { icon: <DollarSign size={24} />, title: 'Mejor precio', desc: 'Precios competitivos, mayorista y minorista. Pedí tu cotización sin compromiso.', color: 'red' },
+              { icon: <Building2 size={24} />, title: 'Todo en un solo lugar', desc: 'Cementos, ladrillos, adhesivos, griferías y más de 500 productos disponibles.', color: 'blue' },
+              { icon: <Truck size={24} />, title: 'Servicio de envío', desc: 'Flota propia de camiones con hidrogrúa.', color: 'red' },
+              { icon: <MessageCircle size={24} />, title: 'Asesoramiento', desc: 'Empleados con experiencia en el rubro te ayudan a elegir el material correcto.', color: 'blue' },
+              { icon: <DollarSign size={24} />, title: 'El mejor precio', desc: 'Precios competitivos, mayorista y minorista. Pedí tu cotización sin compromiso.', color: 'red' },
             ].map((v, i) => (
               <div key={i} className={`empresa-valor empresa-valor--${v.color}`}>
                 <div className={`empresa-valor-icon empresa-valor-icon--${v.color}`}>{v.icon}</div>
