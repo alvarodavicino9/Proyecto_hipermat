@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import WhatsAppFloat from './components/ui/WhatsAppFloat';
@@ -44,6 +45,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <AppContent />
+      <Analytics />
     </BrowserRouter>
   );
 }
