@@ -224,8 +224,8 @@
   transition: transform 0.15s ease-out, box-shadow 0.5s;
 }
 .hero-main-photo {
-  width: 100%; height: 620px;
-  object-fit: cover; object-position: center 35%; display: block;
+  width: 100%; height: 460px;
+  object-fit: cover; object-position: center 38%; display: block;
 }
 .hero-photo-badge {
   position: absolute; bottom: 12px; left: 12px;
@@ -386,7 +386,7 @@
   .hero-ctas { gap: 10px; }
 
   /* Antes se ocultaban las fotos en mobile; ahora se muestran achicadas */
-  .hero-main-photo { height: 480px; }
+  .hero-main-photo { height: 340px; }
   .hero-stats-row { padding: 12px 14px; }
   .hero-main-photo-wrap, .hero-stats-row { transform: none !important; }
 
@@ -411,7 +411,7 @@
   .hero-cta, .hero-cta-wa { width: 100%; justify-content: center; }
   .hero-features { gap: 7px; }
 
-  .hero-main-photo { height: 420px; }
+  .hero-main-photo { height: 260px; }
   .hero-stats-row { padding: 10px 12px; }
   .hero-stat-num { font-size: 1rem; }
   .hero-stat-lbl { font-size: 0.6rem; }
@@ -427,5 +427,5 @@
 
 /* Mobile chico */
 @media (max-width: 380px) {
-  .hero-main-photo { height: 320px; }
+  .hero-main-photo { height: 220px; }
 }

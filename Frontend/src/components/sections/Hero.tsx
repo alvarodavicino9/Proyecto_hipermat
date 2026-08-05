@@ -81,7 +81,7 @@ export default function Hero() {
             <div className="hero-badge"><Star size={12} fill="currentColor" className="hero-badge-star" />Mejoramos cualquier presupuesto</div>
             <h1 className="hero-title">
               <span className="hero-title-main hero-title-anim1">HIPERMAT</span>
-              <span className="hero-title-accent hero-title-anim2">MATERIALES DE CONSTRUCCIÓN</span>
+              <span className="hero-title-accent hero-title-anim2">MATERIALES PARA LA CONSTRUCCIÓN</span>
               <span className="hero-title-sub hero-title-anim3">Venta mayorista y minorista</span>
             </h1>
             <p className="hero-slogan">"Proveemos tu obra, desde el primer ladrillo"</p>
@@ -106,11 +106,11 @@ export default function Hero() {
           <div className="hero-visual">
             <div className="hero-main-photo-wrap" data-tilt="1">
               <SmartImage
-                src="/images/foto5.jpg"
-                alt="Camión Hipermat cargado con ladrillos frente al depósito"
+                src="/images/foto6.jpg"
+                alt="Camión Hipermat con hidrogrúa cargado de ladrillos frente al depósito"
                 className="hero-main-photo"
-                width={600}
-                height={1024}
+                width={1400}
+                height={1050}
                 priority
               />
               <div className="hero-photo-badge">
