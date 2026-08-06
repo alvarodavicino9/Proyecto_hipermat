@@ -41,7 +41,7 @@ export default function Services() {
   const zonaMagnetic = useMagnetic<HTMLAnchorElement>();
   const presupuestoMagnetic = useMagnetic<HTMLAnchorElement>();
   const ripple = useRipple();
-  const waPresupuesto = `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent('Hola! Necesito un presupuesto para materiales de construcción.')}`;
+  const waPresupuesto = `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent('Hola! Necesito un presupuesto para materiales para la construcción.')}`;
 
   return (
     <div>

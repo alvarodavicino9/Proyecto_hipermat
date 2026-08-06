@@ -10,7 +10,7 @@ const WA_SVG = (
 );
 
 const mensajes = [
-  'Hola! Quiero consultar por materiales de construcción.',
+  'Hola! Quiero consultar por materiales para la construcción.',
   'Hola! Necesito un presupuesto para mi obra.',
   'Hola! Quiero saber disponibilidad y precios.',
 ];

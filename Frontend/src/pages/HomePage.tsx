@@ -6,7 +6,7 @@ export default function HomePage() {
     <>
       <SEO
         title="Hipermat Materiales para la Construcción"
-        description="Hipermat Rosario — Corralón de materiales de construcción. Cementos, ladrillos, griferías y más de 500 productos. Venta mayorista y minorista. Envíos con hidrogrúa. El mejor precio garantizado."
+        description="Hipermat Rosario — Corralón de materiales para la construcción. Cementos, ladrillos, griferías y más de 500 productos. Venta mayorista y minorista. Envíos con hidrogrúa. El mejor precio garantizado."
         path="/"
         appendSuffix={false}
       />
