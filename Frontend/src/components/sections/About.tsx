@@ -55,11 +55,11 @@ export default function About() {
           {/* Foto real del depósito con tilt 3D sutil */}
           <div className="about-photo-wrap">
             <SmartImage
-              src="/images/foto1.jpg"
-              alt="Camión Hipermat ingresando al depósito en Rosario"
+              src="/images/foto8.jpg"
+              alt="Camión Hipermat cargado de ladrillos frente al depósito"
               className="about-photo"
-              width={1024}
-              height={768}
+              width={760}
+              height={1296}
             />
           </div>
 

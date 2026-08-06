@@ -158,7 +158,7 @@ export default function Hero() {
 
           <div className="empresa-gallery-2x2">
             <div className="empresa-photo">
-              <SmartImage src="/images/foto7.jpg" alt="Depósito Hipermat con stock de cemento" width={760} height={1048} />
+              <SmartImage src="/images/foto7.jpg" alt="Depósito Hipermat con stock de cemento" width={760} height={1048} style={{ objectPosition: 'center 30%' }} />
               <div className="empresa-photo-overlay"><span>Amplio depósito en Rosario</span></div>
             </div>
             <div className="empresa-photo">
