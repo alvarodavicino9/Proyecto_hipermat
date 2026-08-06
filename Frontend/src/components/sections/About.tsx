@@ -34,7 +34,7 @@ export default function About() {
             <span className="about-tagline-text">OTRO TRATO.</span>
           </h2>
           <p className="about-desc">
-            Somos un corralón de materiales de construcción ubicado en Rosario,
+            Somos un corralón de materiales para la construcción ubicado en Rosario,
             Santa Fe. Nos especializamos en la venta mayorista y minorista, atendiendo tanto a
             particulares como a empresas constructoras.
           </p>
