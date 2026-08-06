@@ -170,7 +170,7 @@ export default function Hero() {
               <div className="empresa-photo-overlay"><span>Servicio de descarga con hidrogrúa</span></div>
             </div>
             <div className="empresa-photo">
-              <SmartImage src="/images/foto5.jpg" alt="Camión Hipermat mayorista y minorista" width={600} height={1024} />
+              <SmartImage src="/images/foto11.jpg" alt="Camión Hipermat con hidrogrúa entregando en obra" width={720} height={1280} />
               <div className="empresa-photo-overlay"><span>Mayoristas y minoristas · +40 años de experiencia</span></div>
             </div>
           </div>
