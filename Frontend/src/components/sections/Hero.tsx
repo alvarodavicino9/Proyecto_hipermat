@@ -148,7 +148,7 @@ export default function Hero() {
           <div ref={empresaAnim.ref} className={`empresa-header anim-fade-up-3d ${empresaAnim.visible ? 'anim-visible-3d' : ''}`}>
             <span className="section-eyebrow">Conocé Hipermat</span>
             <h2 className="section-title empresa-title">
-              TU CORRALÓN DE <span style={{ color: 'var(--red)' }}>CONFIANZA</span>
+              <span style={{ color: 'var(--red)' }}>#Otrotrato</span>
             </h2>
             <p className="empresa-subtitle">
               Más de 40 años abasteciendo obras en Rosario y zona.

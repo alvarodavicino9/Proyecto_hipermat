@@ -1,5 +1,4 @@
 import Hero from '../components/sections/Hero';
-import Testimonials from '../components/sections/Testimonials';
 import SEO from '../components/ui/SEO';
 
 export default function HomePage() {
@@ -12,7 +11,6 @@ export default function HomePage() {
         appendSuffix={false}
       />
       <Hero />
-      <Testimonials />
     </>
   );
 }
