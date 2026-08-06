@@ -178,10 +178,10 @@ export default function Hero() {
           {/* Valores */}
           <div className="empresa-valores">
             {[
-              { icon: <Building2 size={24} />, title: 'Todo en un solo lugar', desc: 'Cementos, ladrillos, adhesivos, griferías y más de 500 productos disponibles.', color: 'blue' },
-              { icon: <Truck size={24} />, title: 'Servicio de envío', desc: 'Flota propia de camiones con hidrogrúa.', color: 'red' },
-              { icon: <MessageCircle size={24} />, title: 'Asesoramiento', desc: 'Empleados con experiencia en el rubro te ayudan a elegir el material correcto.', color: 'blue' },
-              { icon: <DollarSign size={24} />, title: 'El mejor precio', desc: 'Precios competitivos, mayorista y minorista. Pedí tu cotización sin compromiso.', color: 'red' },
+              { icon: <Building2 size={24} />, title: 'Todo en un solo lugar', desc: 'Cementos, ladrillos, adhesivos, mallas, hierros, viguetas y todo lo necesario para tu obra.', color: 'blue' },
+              { icon: <Truck size={24} />, title: 'Servicio de envío', desc: 'Flota propia de camiones con hidrogrúa. Entrega inmediata.', color: 'red' },
+              { icon: <MessageCircle size={24} />, title: 'Asesoramiento', desc: 'Equipo de trabajo con experiencia capacitado para ayudarte ante cualquier consulta.', color: 'blue' },
+              { icon: <DollarSign size={24} />, title: 'El mejor precio', desc: 'Mejoramos cualquier presupuesto, mayorista y minorista. Pedí tu cotización sin compromiso.', color: 'red' },
             ].map((v, i) => (
               <div key={i} className={`empresa-valor empresa-valor--${v.color}`}>
                 <div className={`empresa-valor-icon empresa-valor-icon--${v.color}`}>{v.icon}</div>
