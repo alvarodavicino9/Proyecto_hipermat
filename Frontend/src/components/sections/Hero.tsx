@@ -162,7 +162,7 @@ export default function Hero() {
               <div className="empresa-photo-overlay"><span>Amplio depósito en Rosario</span></div>
             </div>
             <div className="empresa-photo">
-              <SmartImage src="/images/foto8.jpg" alt="Camión Hipermat cargado de ladrillos" width={760} height={1296} />
+              <SmartImage src="/images/foto9.jpg" alt="Flota de camiones Hipermat con hidrogrúa" width={680} height={510} />
               <div className="empresa-photo-overlay"><span>Flota propia de camiones</span></div>
             </div>
             <div className="empresa-photo">
