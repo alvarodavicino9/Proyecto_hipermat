@@ -158,20 +158,20 @@ export default function Hero() {
 
           <div className="empresa-gallery-2x2">
             <div className="empresa-photo">
-              <SmartImage src="/images/foto1.jpg" alt="Flota de camiones Hipermat" width={1024} height={768} />
-              <div className="empresa-photo-overlay"><span>Flota propia de camiones</span></div>
+              <SmartImage src="/images/foto7.jpg" alt="Depósito Hipermat con stock de cemento" width={760} height={1048} />
+              <div className="empresa-photo-overlay"><span>Amplio depósito en Rosario</span></div>
             </div>
             <div className="empresa-photo">
-              <SmartImage src="/images/foto2.jpg" alt="Depósito Hipermat" width={757} height={1024} />
-              <div className="empresa-photo-overlay"><span>Amplio depósito en Rosario</span></div>
+              <SmartImage src="/images/foto8.jpg" alt="Camión Hipermat cargado de ladrillos" width={760} height={1296} />
+              <div className="empresa-photo-overlay"><span>Flota propia de camiones</span></div>
             </div>
             <div className="empresa-photo">
               <SmartImage src="/images/foto3.jpg" alt="Servicio de descarga" width={740} height={1024} />
               <div className="empresa-photo-overlay"><span>Servicio de descarga con hidrogrúa</span></div>
             </div>
             <div className="empresa-photo">
-              <SmartImage src="/images/foto4.jpg" alt="Venta mayorista y minorista" width={752} height={1024} />
-              <div className="empresa-photo-overlay"><span>Mayoristas y minoristas</span></div>
+              <SmartImage src="/images/foto5.jpg" alt="Camión Hipermat mayorista y minorista" width={600} height={1024} />
+              <div className="empresa-photo-overlay"><span>Mayoristas y minoristas · +40 años de experiencia</span></div>
             </div>
           </div>
 
