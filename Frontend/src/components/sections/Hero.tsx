@@ -166,7 +166,7 @@ export default function Hero() {
               <div className="empresa-photo-overlay"><span>Flota propia de camiones</span></div>
             </div>
             <div className="empresa-photo">
-              <SmartImage src="/images/foto3.jpg" alt="Servicio de descarga" width={740} height={1024} />
+              <SmartImage src="/images/foto10.jpg" alt="Servicio de descarga con hidrogrúa Hipermat" width={1400} height={788} />
               <div className="empresa-photo-overlay"><span>Servicio de descarga con hidrogrúa</span></div>
             </div>
             <div className="empresa-photo">
