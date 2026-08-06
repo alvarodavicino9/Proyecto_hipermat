@@ -98,7 +98,7 @@ export default function Hero() {
             </div>
             <div className="hero-features">
               <div className="hero-feature"><Truck size={18} /><span>Envíos a Rosario y gran Rosario</span></div>
-              <div className="hero-feature"><Package size={18} /><span>Venta mayorista y minorista</span></div>
+              <div className="hero-feature"><Package size={18} /><span>Stock permanente y entrega inmediata</span></div>
             </div>
           </div>
 
