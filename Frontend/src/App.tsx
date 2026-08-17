@@ -23,7 +23,7 @@ function ScrollToTop() {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
     // Trackear vista de página en Google Analytics al navegar (SPA: no hay recarga real)
     if (typeof window.gtag === 'function') {
-      window.gtag('config', 'G-LWHS1BZLYK', { page_path: pathname });
+      window.gtag('config', 'G-19QK5T38E0', { page_path: pathname });
     }
   }, [pathname]);
   return null;
